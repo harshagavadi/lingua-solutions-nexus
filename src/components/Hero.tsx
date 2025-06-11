@@ -24,7 +24,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <Button 
               size="lg" 
-              className="text-lg px-8 py-6 bg-blue-600 hover:bg-blue-700"
+              className="text-lg px-8 py-6 bg-blue-600 hover:bg-blue-700 shadow-lg hover:shadow-xl transition-all"
               onClick={scrollToQuote}
             >
               Get Free Quote
@@ -32,22 +32,22 @@ const Hero = () => {
             <Button 
               variant="outline" 
               size="lg" 
-              className="text-lg px-8 py-6"
+              className="text-lg px-8 py-6 border-2 hover:bg-blue-50 transition-all"
               onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Our Services
             </Button>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div className="bg-white/50 backdrop-blur-sm rounded-lg p-6 border border-white/20">
+            <div className="bg-white/70 backdrop-blur-sm rounded-lg p-6 border border-white/30 shadow-lg hover:shadow-xl transition-all">
               <div className="text-3xl font-bold text-blue-600 mb-2">500+</div>
               <div className="text-muted-foreground">Projects Completed</div>
             </div>
-            <div className="bg-white/50 backdrop-blur-sm rounded-lg p-6 border border-white/20">
+            <div className="bg-white/70 backdrop-blur-sm rounded-lg p-6 border border-white/30 shadow-lg hover:shadow-xl transition-all">
               <div className="text-3xl font-bold text-blue-600 mb-2">30+</div>
               <div className="text-muted-foreground">Languages Supported</div>
             </div>
-            <div className="bg-white/50 backdrop-blur-sm rounded-lg p-6 border border-white/20">
+            <div className="bg-white/70 backdrop-blur-sm rounded-lg p-6 border border-white/30 shadow-lg hover:shadow-xl transition-all">
               <div className="text-3xl font-bold text-blue-600 mb-2">98%</div>
               <div className="text-muted-foreground">Accuracy Rate</div>
             </div>
