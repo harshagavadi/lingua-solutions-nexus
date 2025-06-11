@@ -26,8 +26,8 @@ const Contact = () => {
               <p className="text-muted-foreground mb-4">
                 Send us your project details and we'll respond within 2 hours.
               </p>
-              <a href="mailto:info@linguasolutions.com" className="text-blue-600 hover:text-blue-700 font-semibold">
-                info@linguasolutions.com
+              <a href="mailto:harshagavadi@gmail.com" className="text-blue-600 hover:text-blue-700 font-semibold">
+                harshagavadi@gmail.com
               </a>
             </CardContent>
           </Card>
@@ -41,8 +41,8 @@ const Contact = () => {
               <p className="text-muted-foreground mb-4">
                 Quick questions? Chat with us directly on WhatsApp.
               </p>
-              <a href="https://wa.me/1234567890" className="text-green-600 hover:text-green-700 font-semibold">
-                +1 (234) 567-8900
+              <a href="https://wa.me/919591474239" className="text-green-600 hover:text-green-700 font-semibold">
+                +91 95914 74239
               </a>
             </CardContent>
           </Card>

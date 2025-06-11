@@ -10,18 +10,29 @@ const PricingCalculator = () => {
   const [serviceType, setServiceType] = useState('');
   const [wordCount, setWordCount] = useState('');
   const [urgency, setUrgency] = useState('');
+  const [currency, setCurrency] = useState('USD');
   const [estimate, setEstimate] = useState<number | null>(null);
 
   const calculatePrice = () => {
     if (!serviceType || !wordCount) return;
 
     const baseRates = {
-      translation: 0.12,
-      transcription: 1.5,
-      interpretation: 50,
-      localization: 0.15,
-      subtitling: 8,
-      voiceover: 10
+      USD: {
+        translation: 0.10,
+        transcription: 1.5,
+        interpretation: 50,
+        localization: 0.12,
+        subtitling: 8,
+        voiceover: 10
+      },
+      INR: {
+        translation: 0.75,
+        transcription: 120,
+        interpretation: 4000,
+        localization: 0.90,
+        subtitling: 640,
+        voiceover: 800
+      }
     };
 
     const urgencyMultipliers = {
@@ -30,7 +41,7 @@ const PricingCalculator = () => {
       express: 2
     };
 
-    const baseRate = baseRates[serviceType as keyof typeof baseRates] || 0.12;
+    const baseRate = baseRates[currency as keyof typeof baseRates][serviceType as keyof typeof baseRates.USD] || (currency === 'USD' ? 0.10 : 0.75);
     const multiplier = urgencyMultipliers[urgency as keyof typeof urgencyMultipliers] || 1;
     const words = parseInt(wordCount) || 0;
 
@@ -41,7 +52,8 @@ const PricingCalculator = () => {
       calculatedPrice = baseRate * words * multiplier;
     }
 
-    setEstimate(Math.max(calculatedPrice, 25)); // Minimum $25
+    const minimumRate = currency === 'USD' ? 25 : 2000;
+    setEstimate(Math.max(calculatedPrice, minimumRate));
   };
 
   return (
@@ -65,6 +77,19 @@ const PricingCalculator = () => {
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
+              <div>
+                <label className="block text-sm font-medium mb-2">Currency</label>
+                <Select onValueChange={setCurrency} value={currency}>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select currency" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="USD">USD ($)</SelectItem>
+                    <SelectItem value="INR">INR (₹)</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+
               <div>
                 <label className="block text-sm font-medium mb-2">Service Type</label>
                 <Select onValueChange={setServiceType}>
@@ -115,7 +140,7 @@ const PricingCalculator = () => {
               <Button 
                 onClick={calculatePrice} 
                 className="w-full bg-blue-600 hover:bg-blue-700"
-                disabled={!serviceType || !wordCount || !urgency}
+                disabled={!serviceType || !wordCount || !urgency || !currency}
               >
                 Calculate Estimate
               </Button>
@@ -123,7 +148,7 @@ const PricingCalculator = () => {
               {estimate && (
                 <div className="bg-blue-50 p-6 rounded-lg text-center">
                   <div className="text-3xl font-bold text-blue-600 mb-2">
-                    ${estimate.toFixed(2)}
+                    {currency === 'USD' ? '$' : '₹'}{estimate.toFixed(2)}
                   </div>
                   <p className="text-muted-foreground">
                     Estimated price for your project
