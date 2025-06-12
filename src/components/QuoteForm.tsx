@@ -7,6 +7,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
 import { Upload, FileText } from 'lucide-react';
+import { supabase } from '@/integrations/supabase/client';
 
 const QuoteForm = () => {
   const { toast } = useToast();
@@ -30,25 +31,58 @@ const QuoteForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    toast({
-      title: "Quote Request Submitted Successfully!",
-      description: "We'll analyze your project and send a detailed quote within 2 hours. Check your email for confirmation.",
-    });
-    
-    console.log('Quote request:', formData);
-    console.log('Files:', files);
-    
-    // Reset form
-    setFormData({
-      name: '', email: '', company: '', phone: '', serviceType: '', 
-      sourceLanguage: '', targetLanguage: '', wordCount: '', deadline: '', 
-      message: '', budget: ''
-    });
-    setFiles(null);
-    setIsSubmitting(false);
+    try {
+      // Prepare file names array
+      const fileNames = files ? Array.from(files).map(file => file.name) : [];
+      
+      // Prepare quote data
+      const quoteData = {
+        ...formData,
+        fileNames
+      };
+
+      console.log('Submitting quote:', quoteData);
+
+      // Call the edge function to save to database and send email
+      const { data, error } = await supabase.functions.invoke('send-quote-email', {
+        body: { quoteData }
+      });
+
+      if (error) {
+        console.error('Error submitting quote:', error);
+        throw new Error(error.message || 'Failed to submit quote');
+      }
+
+      if (data.success) {
+        toast({
+          title: "Quote Request Submitted Successfully!",
+          description: "Your quote has been sent to our team. We'll analyze your project and send a detailed quote to your email within 2 hours.",
+        });
+
+        // Reset form
+        setFormData({
+          name: '', email: '', company: '', phone: '', serviceType: '', 
+          sourceLanguage: '', targetLanguage: '', wordCount: '', deadline: '', 
+          message: '', budget: ''
+        });
+        setFiles(null);
+        
+        // Reset file input
+        const fileInput = document.getElementById('file-upload') as HTMLInputElement;
+        if (fileInput) fileInput.value = '';
+      } else {
+        throw new Error(data.error || 'Failed to submit quote');
+      }
+    } catch (error) {
+      console.error('Quote submission error:', error);
+      toast({
+        title: "Submission Failed",
+        description: "There was an error submitting your quote. Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (field: string, value: string) => {
