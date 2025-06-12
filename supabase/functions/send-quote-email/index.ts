@@ -99,7 +99,7 @@ serve(async (req) => {
       },
       body: JSON.stringify({
         from: 'LinguaSolutions <onboarding@resend.dev>',
-        to: ['harshagavadi12@gmail.com'],
+        to: ['mrbeastofficial94@gmail.com'],
         subject: `New Quote Request from ${quoteData.name}`,
         html: emailHtml,
       }),
