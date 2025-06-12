@@ -21,6 +21,8 @@ serve(async (req) => {
 
     const { quoteData } = await req.json();
 
+    console.log('Received quote data:', quoteData);
+
     // Store the quote submission in the database
     const { data: submission, error: dbError } = await supabaseClient
       .from('quote_submissions')
@@ -45,6 +47,8 @@ serve(async (req) => {
       console.error('Database error:', dbError);
       throw new Error('Failed to save quote submission');
     }
+
+    console.log('Quote saved to database:', submission.id);
 
     // Send email using Resend
     const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY');
@@ -85,6 +89,8 @@ serve(async (req) => {
       <p><em>This quote request was submitted through the LinguaSolutions website.</em></p>
     `;
 
+    console.log('Sending email...');
+
     const emailResponse = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: {
@@ -92,7 +98,7 @@ serve(async (req) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'LinguaSolutions <noreply@yourdomain.com>',
+        from: 'LinguaSolutions <onboarding@resend.dev>',
         to: ['harshagavadi12@gmail.com'],
         subject: `New Quote Request from ${quoteData.name}`,
         html: emailHtml,
