@@ -1,7 +1,7 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Menu, X, Globe } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import Logo from './Logo';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,10 +15,7 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <div className="flex items-center space-x-2">
-            <Globe className="h-8 w-8 text-blue-600" />
-            <span className="text-xl font-bold text-foreground">LinguaSolutions</span>
-          </div>
+          <Logo />
           
           <nav className="hidden md:flex items-center space-x-8">
             <button onClick={() => scrollToSection('services')} className="text-muted-foreground hover:text-foreground transition-colors">
