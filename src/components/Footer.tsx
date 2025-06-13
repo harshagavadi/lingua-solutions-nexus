@@ -41,7 +41,7 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Contact</h4>
             <ul className="space-y-2 text-gray-300">
-              <li>harshagavadi@gmail.com</li>
+              <li>linguasolutionsindia247@gmail.com</li>
               <li>+91 95914 74239</li>
               <li>24/7 Emergency Support</li>
               <li>ISO 17100:2015 Certified</li>

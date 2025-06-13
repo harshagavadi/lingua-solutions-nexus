@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Mail, Clock } from 'lucide-react';
@@ -26,8 +25,8 @@ const Contact = () => {
               <p className="text-muted-foreground mb-4">
                 Send us your project details and we'll respond within 2 hours.
               </p>
-              <a href="mailto:harshagavadi@gmail.com" className="text-blue-600 hover:text-blue-700 font-semibold">
-                harshagavadi@gmail.com
+              <a href="mailto:linguasolutionsindia247@gmail.com" className="text-blue-600 hover:text-blue-700 font-semibold">
+                linguasolutionsindia247@gmail.com
               </a>
             </CardContent>
           </Card>
