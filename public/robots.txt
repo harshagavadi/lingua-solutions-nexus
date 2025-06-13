@@ -1,3 +1,18 @@
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://linguasolutions.lovable.app/sitemap.xml
+
+# Crawl-delay for better server performance
+Crawl-delay: 1
+
+# Block access to admin areas (if any in future)
+Disallow: /admin/
+Disallow: /private/
+
+# Allow important bots
 User-agent: Googlebot
 Allow: /
 
@@ -10,5 +25,6 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-User-agent: *
-Allow: /
+# SEO optimized robots.txt for translation services
+# Main focus: translation services, document translation, certified translation
+# Target keywords: professional translation, linguistic services, multilingual
