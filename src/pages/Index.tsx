@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
@@ -76,29 +75,31 @@ const Index = () => {
       <div className="pt-16">
         {currentSection !== 'home' && <Breadcrumbs items={getBreadcrumbItems()} />}
         <Hero />
-        <div id="services">
+        <div id="services" className="scroll-mt-20">
           <Services />
         </div>
-        <div id="languages">
+        <div id="languages" className="scroll-mt-20">
           <Languages />
         </div>
-        <div id="industries">
+        <div id="industries" className="scroll-mt-20">
           <Industries />
         </div>
-        <div id="about">
+        <div id="about" className="scroll-mt-20">
           <About />
         </div>
-        <div id="testimonials">
+        <div id="testimonials" className="scroll-mt-20">
           <Testimonials />
         </div>
-        <PricingCalculator />
-        <div id="quote">
+        <div className="scroll-mt-20">
+          <PricingCalculator />
+        </div>
+        <div id="quote" className="scroll-mt-20">
           <QuoteForm />
         </div>
-        <div id="career">
+        <div id="career" className="scroll-mt-20">
           <Career />
         </div>
-        <div id="contact">
+        <div id="contact" className="scroll-mt-20">
           <Contact />
         </div>
         <Footer />

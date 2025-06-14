@@ -9,6 +9,7 @@ import {
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb';
 import { Home } from 'lucide-react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 interface BreadcrumbItem {
   label: string;
@@ -21,25 +22,34 @@ interface BreadcrumbsProps {
 }
 
 const Breadcrumbs = ({ items }: BreadcrumbsProps) => {
+  const isMobile = useIsMobile();
+
   return (
-    <div className="bg-gray-50 py-4 border-b">
+    <div className="bg-gray-50/80 backdrop-blur-sm py-2 sm:py-4 border-b border-gray-200/60">
       <div className="container mx-auto px-4">
         <Breadcrumb>
-          <BreadcrumbList>
+          <BreadcrumbList className="flex-wrap">
             <BreadcrumbItem>
-              <BreadcrumbLink href="/" className="flex items-center gap-1">
-                <Home className="h-4 w-4" />
-                Home
+              <BreadcrumbLink href="/" className="flex items-center gap-1 text-xs sm:text-sm hover:text-blue-600 transition-colors">
+                <Home className="h-3 w-3 sm:h-4 sm:w-4" />
+                {!isMobile && <span>Home</span>}
               </BreadcrumbLink>
             </BreadcrumbItem>
             {items.map((item, index) => (
               <React.Fragment key={index}>
-                <BreadcrumbSeparator />
+                <BreadcrumbSeparator className="text-gray-400" />
                 <BreadcrumbItem>
                   {item.isActive ? (
-                    <BreadcrumbPage>{item.label}</BreadcrumbPage>
+                    <BreadcrumbPage className="text-xs sm:text-sm font-medium text-blue-600 max-w-[150px] sm:max-w-none truncate">
+                      {item.label}
+                    </BreadcrumbPage>
                   ) : (
-                    <BreadcrumbLink href={item.href}>{item.label}</BreadcrumbLink>
+                    <BreadcrumbLink 
+                      href={item.href} 
+                      className="text-xs sm:text-sm hover:text-blue-600 transition-colors max-w-[150px] sm:max-w-none truncate"
+                    >
+                      {item.label}
+                    </BreadcrumbLink>
                   )}
                 </BreadcrumbItem>
               </React.Fragment>
