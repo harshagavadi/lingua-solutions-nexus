@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
@@ -33,6 +34,9 @@ const Header = () => {
             <button onClick={() => scrollToSection('testimonials')} className="text-muted-foreground hover:text-foreground transition-colors">
               Testimonials
             </button>
+            <button onClick={() => scrollToSection('career')} className="text-muted-foreground hover:text-foreground transition-colors">
+              Career
+            </button>
             <button onClick={() => scrollToSection('contact')} className="text-muted-foreground hover:text-foreground transition-colors">
               Contact
             </button>
@@ -66,6 +70,9 @@ const Header = () => {
               </button>
               <button onClick={() => scrollToSection('testimonials')} className="text-left text-muted-foreground hover:text-foreground transition-colors">
                 Testimonials
+              </button>
+              <button onClick={() => scrollToSection('career')} className="text-left text-muted-foreground hover:text-foreground transition-colors">
+                Career
               </button>
               <button onClick={() => scrollToSection('contact')} className="text-left text-muted-foreground hover:text-foreground transition-colors">
                 Contact

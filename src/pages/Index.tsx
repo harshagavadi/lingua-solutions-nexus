@@ -9,6 +9,7 @@ import About from '../components/About';
 import Testimonials from '../components/Testimonials';
 import PricingCalculator from '../components/PricingCalculator';
 import QuoteForm from '../components/QuoteForm';
+import Career from '../components/Career';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 
@@ -36,6 +37,9 @@ const Index = () => {
         <PricingCalculator />
         <div id="quote">
           <QuoteForm />
+        </div>
+        <div id="career">
+          <Career />
         </div>
         <div id="contact">
           <Contact />
