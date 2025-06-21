@@ -2,29 +2,87 @@
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://www.linguasolutionsindia.com/sitemap.xml
-
-# Crawl-delay for better server performance
-Crawl-delay: 1
-
-# Block access to admin areas (if any in future)
-Disallow: /admin/
-Disallow: /private/
-
-# Allow important bots
+# Enhanced robots.txt for better SEO performance
+# Priority crawling for important pages
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 2
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 2
+
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 2
+
+User-agent: facebookexternalhit
 Allow: /
 
 User-agent: Twitterbot
 Allow: /
 
-User-agent: facebookexternalhit
+User-agent: LinkedInBot
 Allow: /
 
-# SEO optimized robots.txt for translation services
-# Main focus: translation services, document translation, certified translation
-# Target keywords: professional translation, linguistic services, multilingual
+User-agent: WhatsApp
+Allow: /
+
+# Block access to admin areas and sensitive files
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
+Disallow: /*.json$
+Disallow: /src/
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /temp/
+Disallow: /cache/
+
+# Allow important assets
+Allow: /assets/
+Allow: /images/
+Allow: /css/
+Allow: /js/
+Allow: /*.css
+Allow: /*.js
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.gif
+Allow: /*.svg
+Allow: /*.webp
+Allow: /*.ico
+
+# Sitemap locations
+Sitemap: https://www.linguasolutionsindia.com/sitemap.xml
+
+# General crawl delay for better server performance
+Crawl-delay: 1
+
+# SEO Focus Areas:
+# - Professional translation services
+# - Certified translation
+# - Document translation
+# - Legal translation services
+# - Medical translation
+# - Technical translation
+# - ISO certified translators
+# - Translation company India
+# - Multilingual translation services
+# - 30+ languages translation
+# - 98% accuracy translation
+# - Fast translation services
+# - Affordable translation rates
