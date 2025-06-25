@@ -24,29 +24,48 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-6 mb-6 sm:mb-8 text-xs sm:text-sm text-muted-foreground">
             <div className="flex items-center space-x-2">
               <Shield className="h-3 w-3 sm:h-4 sm:w-4 text-green-600" />
-              <span>ISO 17100:2015 Certified</span>
+              <span>ISO 17100:2015 Certified Translation Company</span>
             </div>
             <div className="flex items-center space-x-2">
               <Star className="h-3 w-3 sm:h-4 sm:w-4 text-yellow-500" />
-              <span>4.9/5 Rating</span>
+              <span>4.9/5 Client Satisfaction Rating</span>
             </div>
             <div className="flex items-center space-x-2">
               <Clock className="h-3 w-3 sm:h-4 sm:w-4 text-blue-600" />
-              <span>24/7 Support</span>
+              <span>24/7 Translation Support</span>
             </div>
           </div>
 
           <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-bold text-foreground mb-4 sm:mb-6 leading-tight">
-            Expert Translation &{' '}
+            #1 Professional Translation Services in India - {' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
-              Linguistic Solutions
+              Certified & Accurate
             </span>
           </h1>
           
           <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-muted-foreground mb-6 sm:mb-8 max-w-4xl mx-auto font-light leading-relaxed px-2">
-            Professional translation services in <strong>30+ languages</strong>. From legal documents to marketing content, 
-            we bridge language barriers with <strong>98% accuracy</strong> and cultural expertise.
+            Leading <strong>professional translation company in India</strong> offering certified document translation in <strong>30+ languages</strong>. 
+            Expert legal, medical, technical translation services with <strong>98% accuracy guarantee</strong> and same-day delivery. 
+            Trusted by 500+ businesses worldwide for accurate, affordable translation solutions.
           </p>
+          
+          {/* Key Value Propositions */}
+          <div className="mb-6 sm:mb-8 max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-sm font-medium">
+              <div className="bg-white/80 rounded-lg p-3 border border-blue-100">
+                <span className="text-blue-600">✓</span> Certified Translation Services
+              </div>
+              <div className="bg-white/80 rounded-lg p-3 border border-green-100">
+                <span className="text-green-600">✓</span> Same Day Delivery Available
+              </div>
+              <div className="bg-white/80 rounded-lg p-3 border border-purple-100">
+                <span className="text-purple-600">✓</span> Government Approved Translators
+              </div>
+              <div className="bg-white/80 rounded-lg p-3 border border-orange-100">
+                <span className="text-orange-600">✓</span> Affordable Translation Rates
+              </div>
+            </div>
+          </div>
           
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-12 sm:mb-16 px-4">
             <Button 
@@ -54,7 +73,7 @@ const Hero = () => {
               className="w-full sm:w-auto text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
               onClick={scrollToQuote}
             >
-              Get Free Quote - 2 Hours Response
+              Get Free Translation Quote - 15 Minutes Response
             </Button>
             <Button 
               variant="outline" 
@@ -62,27 +81,36 @@ const Hero = () => {
               className="w-full sm:w-auto text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6 border-2 hover:bg-blue-50 transition-all duration-300 hover:shadow-lg"
               onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              Explore Our Services
+              View Translation Services
             </Button>
           </div>
           
-          {/* Enhanced Stats */}
+          {/* Enhanced Stats with SEO Keywords */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 text-center px-2">
             <div className="bg-white/80 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group">
               <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-800 mb-2 sm:mb-3 group-hover:scale-110 transition-transform">500+</div>
-              <div className="text-sm sm:text-base text-muted-foreground font-medium">Projects Completed Successfully</div>
-              <div className="text-xs sm:text-sm text-muted-foreground mt-1 sm:mt-2">Across 50+ industries worldwide</div>
+              <div className="text-sm sm:text-base text-muted-foreground font-medium">Successful Translation Projects</div>
+              <div className="text-xs sm:text-sm text-muted-foreground mt-1 sm:mt-2">Across legal, medical, technical industries</div>
             </div>
             <div className="bg-white/80 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group">
               <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-green-800 mb-2 sm:mb-3 group-hover:scale-110 transition-transform">30+</div>
               <div className="text-sm sm:text-base text-muted-foreground font-medium">Languages Supported</div>
-              <div className="text-xs sm:text-sm text-muted-foreground mt-1 sm:mt-2">Native speakers & certified experts</div>
+              <div className="text-xs sm:text-sm text-muted-foreground mt-1 sm:mt-2">Native certified translators available</div>
             </div>
             <div className="bg-white/80 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group sm:col-span-2 lg:col-span-1">
               <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-purple-800 mb-2 sm:mb-3 group-hover:scale-110 transition-transform">98%</div>
-              <div className="text-sm sm:text-base text-muted-foreground font-medium">Accuracy Rate Guaranteed</div>
-              <div className="text-xs sm:text-sm text-muted-foreground mt-1 sm:mt-2">Quality assured & certified</div>
+              <div className="text-sm sm:text-base text-muted-foreground font-medium">Translation Accuracy Rate</div>
+              <div className="text-xs sm:text-sm text-muted-foreground mt-1 sm:mt-2">ISO certified quality assurance</div>
             </div>
+          </div>
+
+          {/* Service Keywords for SEO */}
+          <div className="mt-8 sm:mt-12 text-xs sm:text-sm text-muted-foreground max-w-4xl mx-auto">
+            <p className="leading-relaxed">
+              <strong>Professional Services:</strong> Document Translation Services • Legal Translation India • Medical Translation Services • 
+              Technical Translation • Certified Translation Services • Website Localization • Business Translation • Academic Translation • 
+              Immigration Document Translation • Marriage Certificate Translation • Birth Certificate Translation • Passport Translation Services
+            </p>
           </div>
         </div>
       </div>
