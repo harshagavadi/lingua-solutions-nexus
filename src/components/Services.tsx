@@ -11,7 +11,8 @@ const Services = () => {
       description: 'Professional certified translation for legal documents, immigration papers, academic certificates, and business contracts. Government-approved translators with notarization and apostille services available.',
       features: ['Legal Document Translation', 'Immigration Papers', 'Academic Certificate Translation', 'Notarized Translation Services'],
       gradient: 'from-blue-500 to-blue-600',
-      keywords: 'certified translation, legal document translation, immigration translation, notarized translation India'
+      keywords: 'certified translation, legal document translation, immigration translation, notarized translation India',
+      image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=300&fit=crop&crop=center'
     },
     {
       icon: BookOpen,
@@ -19,7 +20,8 @@ const Services = () => {
       description: 'Accurate multilingual transcription services for business meetings, interviews, podcasts, and video content. Professional quality with timestamps and speaker identification.',
       features: ['Business Meeting Transcription', 'Interview Transcription', 'Podcast Transcription', 'Video Subtitle Services'],
       gradient: 'from-green-500 to-green-600',
-      keywords: 'transcription services India, audio transcription, video transcription, multilingual transcription'
+      keywords: 'transcription services India, audio transcription, video transcription, multilingual transcription',
+      image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop&crop=center'
     },
     {
       icon: Users,
@@ -27,7 +29,8 @@ const Services = () => {
       description: 'Expert interpreters for conferences, business meetings, medical appointments, and legal proceedings. Available on-site and remotely with specialized industry knowledge.',
       features: ['Conference Interpreting', 'Medical Interpretation', 'Legal Interpretation', 'Business Meeting Support'],
       gradient: 'from-purple-500 to-purple-600',
-      keywords: 'interpretation services, conference interpreter India, medical interpreter, legal interpreter'
+      keywords: 'interpretation services, conference interpreter India, medical interpreter, legal interpreter',
+      image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=400&h=300&fit=crop&crop=center'
     },
     {
       icon: Pen,
@@ -35,7 +38,8 @@ const Services = () => {
       description: 'Complete localization solutions for websites, mobile applications, and software platforms. Cultural adaptation, UI translation, and market-specific content optimization.',
       features: ['Website Localization', 'Mobile App Translation', 'Software UI Translation', 'E-commerce Localization'],
       gradient: 'from-orange-500 to-orange-600',
-      keywords: 'website localization India, app translation services, software localization, e-commerce translation'
+      keywords: 'website localization India, app translation services, software localization, e-commerce translation',
+      image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=300&fit=crop&crop=center'
     },
     {
       icon: Image,
@@ -43,7 +47,8 @@ const Services = () => {
       description: 'Professional video translation with subtitling, dubbing, and voice-over services. Native speaker quality for marketing videos, training content, and multimedia presentations.',
       features: ['Video Subtitling Services', 'Professional Voice-over', 'Video Dubbing', 'Multimedia Localization'],
       gradient: 'from-pink-500 to-pink-600',
-      keywords: 'video subtitling services, voice over services India, video dubbing, multimedia translation'
+      keywords: 'video subtitling services, voice over services India, video dubbing, multimedia translation',
+      image: 'https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=400&h=300&fit=crop&crop=center'
     },
     {
       icon: Search,
@@ -51,7 +56,8 @@ const Services = () => {
       description: 'Expert linguistic consultation, terminology management, and translation quality assurance. Style guide creation, glossary development, and ongoing translation project management.',
       features: ['Translation Quality Control', 'Terminology Management', 'Translation Consulting', 'Project Management'],
       gradient: 'from-indigo-500 to-indigo-600',
-      keywords: 'translation quality assurance, linguistic consulting India, terminology management, translation project management'
+      keywords: 'translation quality assurance, linguistic consulting India, terminology management, translation project management',
+      image: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=400&h=300&fit=crop&crop=center'
     }
   ];
 
@@ -80,6 +86,17 @@ const Services = () => {
               className="group hover:shadow-2xl transition-all duration-500 border-2 hover:border-transparent hover:-translate-y-2 bg-gradient-to-br from-white to-gray-50 overflow-hidden relative"
             >
               <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
+              
+              {/* Service Image */}
+              <div className="relative overflow-hidden">
+                <img 
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+              </div>
+              
               <CardHeader className="text-center relative z-10">
                 <div className={`mx-auto mb-6 p-4 bg-gradient-to-br ${service.gradient} rounded-2xl w-20 h-20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
                   <service.icon className="h-10 w-10 text-white" />

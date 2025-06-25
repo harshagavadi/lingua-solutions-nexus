@@ -11,7 +11,8 @@ const Testimonials = () => {
       content: 'LinguaSolutions India transformed our global expansion with exceptional technical translation services. Their software localization accuracy and cultural insights were invaluable for our international product launch across 15 countries.',
       rating: 5,
       project: 'Software Localization Project - 8 Languages',
-      industry: 'Technology'
+      industry: 'Technology',
+      avatar: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face'
     },
     {
       name: 'Dr. Rajesh Patel',
@@ -20,7 +21,8 @@ const Testimonials = () => {
       content: 'The precision and attention to detail in translating our clinical trial documentation was exceptional. Their medical translators understood complex pharmaceutical terminology perfectly, ensuring regulatory compliance across multiple countries.',
       rating: 5,
       project: 'Clinical Trial Documentation - FDA Submission',
-      industry: 'Healthcare'
+      industry: 'Healthcare',
+      avatar: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=150&h=150&fit=crop&crop=face'
     },
     {
       name: 'Maria Rodriguez',
@@ -29,7 +31,8 @@ const Testimonials = () => {
       content: 'Their certified legal translation services have been crucial for our international litigation cases. Professional accuracy, perfect terminology, and delivered ahead of schedule every single time. Highly recommended for legal firms.',
       rating: 5,
       project: 'International Contract Translation - 12 Countries',
-      industry: 'Legal'
+      industry: 'Legal',
+      avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop&crop=face'
     },
     {
       name: 'Ahmed Al-Mansouri',
@@ -38,7 +41,8 @@ const Testimonials = () => {
       content: 'Outstanding Arabic translation services for our business expansion in Middle East. The cultural adaptation and business terminology expertise helped us establish strong partnerships across Arab markets.',
       rating: 5,
       project: 'Business Documentation - Arabic Markets',
-      industry: 'Business'
+      industry: 'Business',
+      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face'
     },
     {
       name: 'Prof. Linda Chen',
@@ -47,7 +51,8 @@ const Testimonials = () => {
       content: 'Excellent academic translation services for our research publications. Their translators have deep understanding of academic writing and research methodology, delivering publication-ready translations consistently.',
       rating: 5,
       project: 'Academic Research Papers - 6 Languages',
-      industry: 'Education'
+      industry: 'Education',
+      avatar: 'https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=150&h=150&fit=crop&crop=face'
     },
     {
       name: 'Roberto Silva',
@@ -56,7 +61,8 @@ const Testimonials = () => {
       content: 'Perfect technical manual translation for our industrial equipment. The accuracy in engineering terminology and safety instructions was critical for our international operations. Exceptional service quality.',
       rating: 5,
       project: 'Technical Manual Translation - Safety Critical',
-      industry: 'Manufacturing'
+      industry: 'Manufacturing',
+      avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face'
     }
   ];
 
@@ -105,13 +111,22 @@ const Testimonials = () => {
                   "{testimonial.content}"
                 </p>
                 <div className="border-t pt-4">
-                  <div className="font-semibold text-foreground">{testimonial.name}</div>
-                  <div className="text-sm text-blue-600 font-medium">{testimonial.position}</div>
-                  <div className="text-sm text-muted-foreground">{testimonial.company}</div>
-                  <div className="mt-2 text-xs bg-gray-100 rounded-full px-3 py-1 inline-block">
+                  <div className="flex items-center mb-4">
+                    <img 
+                      src={testimonial.avatar}
+                      alt={testimonial.name}
+                      className="w-12 h-12 rounded-full object-cover mr-4"
+                    />
+                    <div>
+                      <div className="font-semibold text-foreground">{testimonial.name}</div>
+                      <div className="text-sm text-blue-600 font-medium">{testimonial.position}</div>
+                      <div className="text-sm text-muted-foreground">{testimonial.company}</div>
+                    </div>
+                  </div>
+                  <div className="text-xs bg-gray-100 rounded-full px-3 py-1 inline-block mb-2">
                     {testimonial.project}
                   </div>
-                  <div className="mt-1 text-xs text-green-600 font-medium">
+                  <div className="text-xs text-green-600 font-medium">
                     Industry: {testimonial.industry}
                   </div>
                 </div>
