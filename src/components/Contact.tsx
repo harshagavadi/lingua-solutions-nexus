@@ -4,15 +4,38 @@ import { Mail, Clock } from 'lucide-react';
 
 const Contact = () => {
   return (
-    <section className="py-20 bg-background">
-      <div className="container mx-auto px-4">
+    <section className="py-20 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 relative overflow-hidden">
+      {/* Background Decorative Elements */}
+      <div className="absolute top-10 left-10 w-40 h-40 bg-gradient-to-br from-blue-300/20 to-purple-300/20 rounded-full blur-2xl"></div>
+      <div className="absolute bottom-20 right-20 w-32 h-32 bg-gradient-to-br from-pink-300/20 to-orange-300/20 rounded-full blur-xl"></div>
+      
+      {/* Floating Contact Icons */}
+      <div className="absolute top-20 right-1/4 animate-float">
+        <div className="w-16 h-16 bg-white/80 rounded-2xl shadow-xl flex items-center justify-center backdrop-blur-sm border border-blue-200">
+          <span className="text-2xl">📞</span>
+        </div>
+      </div>
+      <div className="absolute bottom-32 left-1/4 animate-bounce">
+        <div className="w-12 h-12 bg-white/80 rounded-xl shadow-lg flex items-center justify-center backdrop-blur-sm border border-purple-200">
+          <span className="text-xl">✉️</span>
+        </div>
+      </div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
             Get in Touch
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Ready to start your translation project? Contact us today for expert consultation and support.
           </p>
+          
+          {/* Beautiful Divider */}
+          <div className="flex items-center justify-center mt-8">
+            <div className="h-1 w-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
+            <div className="mx-4 w-3 h-3 bg-gradient-to-br from-pink-500 to-orange-500 rounded-full animate-pulse"></div>
+            <div className="h-1 w-20 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
+          </div>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">

@@ -12,21 +12,46 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-blue-50 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-indigo-50 via-purple-50 to-pink-50 overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
       
-      {/* Hero Image */}
-      <div className="absolute top-0 right-0 w-1/2 h-full opacity-10">
+      {/* Multiple Hero Images for Visual Appeal */}
+      <div className="absolute top-0 right-0 w-1/2 h-full opacity-15">
         <img 
           src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&h=600&fit=crop&crop=center"
-          alt="Professional translation services background"
+          alt="Professional translation services"
           className="w-full h-full object-cover"
         />
       </div>
       
-      <div className="absolute top-20 left-4 sm:left-10 w-48 h-48 sm:w-72 sm:h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
-      <div className="absolute top-40 right-4 sm:right-10 w-48 h-48 sm:w-72 sm:h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
+      {/* Floating Translation Elements */}
+      <div className="absolute top-10 left-10 w-20 h-20 bg-white/80 rounded-2xl shadow-lg flex items-center justify-center animate-bounce backdrop-blur-sm border border-blue-200">
+        <span className="text-2xl">🌍</span>
+      </div>
+      <div className="absolute top-32 right-20 w-16 h-16 bg-white/80 rounded-xl shadow-lg flex items-center justify-center animate-pulse backdrop-blur-sm border border-purple-200">
+        <span className="text-xl">📝</span>
+      </div>
+      <div className="absolute bottom-32 left-20 w-18 h-18 bg-white/80 rounded-2xl shadow-lg flex items-center justify-center animate-bounce backdrop-blur-sm border border-green-200">
+        <span className="text-lg">🔤</span>
+      </div>
+      <div className="absolute top-1/2 right-10 w-14 h-14 bg-white/80 rounded-full shadow-lg flex items-center justify-center animate-pulse backdrop-blur-sm border border-orange-200">
+        <span className="text-sm">💬</span>
+      </div>
+      
+      {/* Enhanced Gradient Orbs */}
+      <div className="absolute top-20 left-4 sm:left-10 w-48 h-48 sm:w-72 sm:h-72 bg-gradient-to-br from-blue-300 to-indigo-400 rounded-full mix-blend-multiply filter blur-xl opacity-40 animate-pulse"></div>
+      <div className="absolute top-40 right-4 sm:right-10 w-48 h-48 sm:w-72 sm:h-72 bg-gradient-to-br from-purple-300 to-pink-400 rounded-full mix-blend-multiply filter blur-xl opacity-40 animate-pulse"></div>
+      <div className="absolute bottom-40 left-1/3 w-32 h-32 sm:w-48 sm:h-48 bg-gradient-to-br from-green-300 to-teal-400 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
+      
+      {/* Decorative Language Flags */}
+      <div className="absolute top-1/4 left-1/4 opacity-20 animate-float">
+        <div className="flex space-x-2">
+          <div className="w-8 h-6 bg-gradient-to-r from-green-500 via-white to-orange-500 rounded shadow-sm"></div>
+          <div className="w-8 h-6 bg-gradient-to-b from-blue-500 via-white to-red-500 rounded shadow-sm"></div>
+          <div className="w-8 h-6 bg-gradient-to-r from-black via-red-500 to-yellow-500 rounded shadow-sm"></div>
+        </div>
+      </div>
       
       <div className="container mx-auto px-4 text-center relative z-10">
         <div className="max-w-5xl mx-auto animate-fade-in">
