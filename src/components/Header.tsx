@@ -29,6 +29,7 @@ const Header = () => {
     { id: 'about', label: 'About' },
     { id: 'testimonials', label: 'Testimonials' },
     { id: 'career', label: 'Career' },
+    { id: 'backlinks', label: 'Resources' },
     { id: 'contact', label: 'Contact' },
   ];
 
@@ -56,6 +57,7 @@ const Header = () => {
               'hover:bg-orange-100 hover:text-orange-700 hover:border-orange-300',
               'hover:bg-pink-100 hover:text-pink-700 hover:border-pink-300',
               'hover:bg-indigo-100 hover:text-indigo-700 hover:border-indigo-300',
+              'hover:bg-cyan-100 hover:text-cyan-700 hover:border-cyan-300',
               'hover:bg-teal-100 hover:text-teal-700 hover:border-teal-300'
             ];
             return (
@@ -96,6 +98,7 @@ const Header = () => {
                 'hover:text-orange-600 hover:bg-orange-50',
                 'hover:text-pink-600 hover:bg-pink-50',
                 'hover:text-indigo-600 hover:bg-indigo-50',
+                'hover:text-cyan-600 hover:bg-cyan-50',
                 'hover:text-teal-600 hover:bg-teal-50'
               ];
               return (

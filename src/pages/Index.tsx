@@ -10,6 +10,7 @@ import PricingCalculator from '../components/PricingCalculator';
 import QuoteForm from '../components/QuoteForm';
 import Career from '../components/Career';
 import Contact from '../components/Contact';
+import Backlinks from '../components/Backlinks';
 import Footer from '../components/Footer';
 import Breadcrumbs from '../components/Breadcrumbs';
 
@@ -18,7 +19,7 @@ const Index = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['services', 'languages', 'industries', 'about', 'testimonials', 'quote', 'career', 'contact'];
+      const sections = ['services', 'languages', 'industries', 'about', 'testimonials', 'quote', 'career', 'backlinks', 'contact'];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -54,6 +55,7 @@ const Index = () => {
       'testimonials': 'Testimonials',
       'quote': 'Get Quote',
       'career': 'Career Opportunities',
+      'backlinks': 'Resources & Partners',
       'contact': 'Contact Us'
     };
 
@@ -98,6 +100,9 @@ const Index = () => {
         </div>
         <div id="career" className="scroll-mt-20">
           <Career />
+        </div>
+        <div id="backlinks" className="scroll-mt-20">
+          <Backlinks />
         </div>
         <div id="contact" className="scroll-mt-20">
           <Contact />
