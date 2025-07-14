@@ -11,29 +11,38 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-600 via-indigo-700 to-teal-600 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 to-blue-50 overflow-hidden">
+      {/* Background image */}
+      <div className="absolute inset-0 opacity-20">
+        <img 
+          src="/lovable-uploads/30c8b16a-f320-408c-a511-978738cd6002.png" 
+          alt="LinguaSolutions Background" 
+          className="w-full h-full object-cover"
+        />
+      </div>
+      
       {/* Background decorative elements */}
-      <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-purple-400/20 rounded-full mix-blend-overlay filter blur-xl animate-pulse"></div>
-      <div className="absolute bottom-1/3 right-1/3 w-48 h-48 bg-teal-400/20 rounded-full mix-blend-overlay filter blur-xl animate-pulse"></div>
+      <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-400/10 rounded-full mix-blend-overlay filter blur-xl animate-pulse"></div>
+      <div className="absolute bottom-1/3 right-1/3 w-48 h-48 bg-indigo-400/10 rounded-full mix-blend-overlay filter blur-xl animate-pulse"></div>
       
       {/* Language decoration elements */}
-      <div className="absolute top-20 right-10 opacity-30 text-4xl font-bold text-white/20 transform rotate-12">
+      <div className="absolute top-20 right-10 opacity-20 text-4xl font-bold text-blue-600/30 transform rotate-12">
         తెలుగు
       </div>
-      <div className="absolute bottom-40 left-10 opacity-30 text-3xl font-bold text-white/20 transform -rotate-12">
+      <div className="absolute bottom-40 left-10 opacity-20 text-3xl font-bold text-indigo-600/30 transform -rotate-12">
         தமிழ்
       </div>
-      <div className="absolute top-1/3 left-10 opacity-30 text-2xl font-bold text-white/20 transform rotate-45">
+      <div className="absolute top-1/3 left-10 opacity-20 text-2xl font-bold text-purple-600/30 transform rotate-45">
         ગુજરાતી
       </div>
       
       <div className="container mx-auto px-4 text-center relative z-10">
         <div className="max-w-4xl mx-auto animate-fade-in">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-slate-800 mb-6 leading-tight">
             Advanced Translation Hub for India
           </h1>
           
-          <p className="text-lg sm:text-xl md:text-2xl text-purple-100 mb-8 max-w-3xl mx-auto font-light leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl text-slate-600 mb-8 max-w-3xl mx-auto font-light leading-relaxed">
             Linga Solutions delivers precision-driven language services across 40+ Indian & international languages. Empowering businesses with seamless communication solutions.
           </p>
           
@@ -79,7 +88,7 @@ const Hero = () => {
           </div>
           
           {/* Bottom tagline */}
-          <div className="text-xl sm:text-2xl md:text-3xl font-semibold text-white/90">
+          <div className="text-xl sm:text-2xl md:text-3xl font-semibold text-slate-700">
             Professional Language Solutions for Growing Businesses
           </div>
         </div>
