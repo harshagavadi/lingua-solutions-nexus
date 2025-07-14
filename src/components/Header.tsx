@@ -44,9 +44,6 @@ const Header = () => {
       <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-gradient-to-br from-blue-50 to-purple-50">
         <SheetHeader>
           <SheetTitle className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Navigation</SheetTitle>
-          <SheetDescription className="text-muted-foreground">
-            Navigate to different sections of our website
-          </SheetDescription>
         </SheetHeader>
         <nav className="flex flex-col space-y-2 mt-8">
           {navigationItems.map((item, index) => {
