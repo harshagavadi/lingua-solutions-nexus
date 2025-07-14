@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowDown, Star, Shield, Clock } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 const Hero = () => {
@@ -12,146 +11,78 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-indigo-50 via-purple-50 to-pink-50 overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-400/20 rounded-full mix-blend-overlay filter blur-xl animate-pulse"></div>
+      <div className="absolute bottom-1/3 right-1/3 w-48 h-48 bg-cyan-400/20 rounded-full mix-blend-overlay filter blur-xl animate-pulse"></div>
       
-      {/* Multiple Hero Images for Visual Appeal */}
-      <div className="absolute top-0 right-0 w-1/2 h-full opacity-15">
-        <img 
-          src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&h=600&fit=crop&crop=center"
-          alt="Professional translation services"
-          className="w-full h-full object-cover"
-        />
+      {/* Language decoration elements */}
+      <div className="absolute top-20 right-10 opacity-30 text-4xl font-bold text-white/20 transform rotate-12">
+        हिन्दी
       </div>
-      
-      {/* Floating Translation Elements */}
-      <div className="absolute top-10 left-10 w-20 h-20 bg-white/80 rounded-2xl shadow-lg flex items-center justify-center animate-bounce backdrop-blur-sm border border-blue-200">
-        <span className="text-2xl">🌍</span>
+      <div className="absolute bottom-40 left-10 opacity-30 text-3xl font-bold text-white/20 transform -rotate-12">
+        中文
       </div>
-      <div className="absolute top-32 right-20 w-16 h-16 bg-white/80 rounded-xl shadow-lg flex items-center justify-center animate-pulse backdrop-blur-sm border border-purple-200">
-        <span className="text-xl">📝</span>
-      </div>
-      <div className="absolute bottom-32 left-20 w-18 h-18 bg-white/80 rounded-2xl shadow-lg flex items-center justify-center animate-bounce backdrop-blur-sm border border-green-200">
-        <span className="text-lg">🔤</span>
-      </div>
-      <div className="absolute top-1/2 right-10 w-14 h-14 bg-white/80 rounded-full shadow-lg flex items-center justify-center animate-pulse backdrop-blur-sm border border-orange-200">
-        <span className="text-sm">💬</span>
-      </div>
-      
-      {/* Enhanced Gradient Orbs */}
-      <div className="absolute top-20 left-4 sm:left-10 w-48 h-48 sm:w-72 sm:h-72 bg-gradient-to-br from-blue-300 to-indigo-400 rounded-full mix-blend-multiply filter blur-xl opacity-40 animate-pulse"></div>
-      <div className="absolute top-40 right-4 sm:right-10 w-48 h-48 sm:w-72 sm:h-72 bg-gradient-to-br from-purple-300 to-pink-400 rounded-full mix-blend-multiply filter blur-xl opacity-40 animate-pulse"></div>
-      <div className="absolute bottom-40 left-1/3 w-32 h-32 sm:w-48 sm:h-48 bg-gradient-to-br from-green-300 to-teal-400 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
-      
-      {/* Decorative Language Flags */}
-      <div className="absolute top-1/4 left-1/4 opacity-20 animate-float">
-        <div className="flex space-x-2">
-          <div className="w-8 h-6 bg-gradient-to-r from-green-500 via-white to-orange-500 rounded shadow-sm"></div>
-          <div className="w-8 h-6 bg-gradient-to-b from-blue-500 via-white to-red-500 rounded shadow-sm"></div>
-          <div className="w-8 h-6 bg-gradient-to-r from-black via-red-500 to-yellow-500 rounded shadow-sm"></div>
-        </div>
+      <div className="absolute top-1/3 left-10 opacity-30 text-2xl font-bold text-white/20 transform rotate-45">
+        العربية
       </div>
       
       <div className="container mx-auto px-4 text-center relative z-10">
-        <div className="max-w-5xl mx-auto animate-fade-in">
-          {/* Trust Indicators */}
-          <div className="flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-6 mb-6 sm:mb-8 text-xs sm:text-sm text-muted-foreground">
-            <div className="flex items-center space-x-2">
-              <Shield className="h-3 w-3 sm:h-4 sm:w-4 text-green-600" />
-              <span>ISO 17100:2015 Certified Translation Company</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Star className="h-3 w-3 sm:h-4 sm:w-4 text-yellow-500" />
-              <span>4.9/5 Client Satisfaction Rating</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Clock className="h-3 w-3 sm:h-4 sm:w-4 text-blue-600" />
-              <span>24/7 Translation Support</span>
-            </div>
-          </div>
-
-          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-bold text-foreground mb-4 sm:mb-6 leading-tight">
-            #1 Professional Translation Services in India - {' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
-              Certified & Accurate
-            </span>
+        <div className="max-w-4xl mx-auto animate-fade-in">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+            Seamless Multipurpose Language Tool
           </h1>
           
-          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-muted-foreground mb-6 sm:mb-8 max-w-4xl mx-auto font-light leading-relaxed px-2">
-            Leading <strong>professional translation company in India</strong> offering certified document translation in <strong>30+ languages</strong>. 
-            Expert legal, medical, technical translation services with <strong>98% accuracy guarantee</strong> and same-day delivery. 
-            Trusted by 500+ businesses worldwide for accurate, affordable translation solutions.
+          <p className="text-lg sm:text-xl md:text-2xl text-blue-100 mb-8 max-w-3xl mx-auto font-light leading-relaxed">
+            LinguaSol provides translation and localization solutions for Software, Website, App and ERP Systems.
           </p>
           
-          {/* Key Value Propositions */}
-          <div className="mb-6 sm:mb-8 max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-sm font-medium">
-              <div className="bg-white/80 rounded-lg p-3 border border-blue-100">
-                <span className="text-blue-600">✓</span> Certified Translation Services
-              </div>
-              <div className="bg-white/80 rounded-lg p-3 border border-green-100">
-                <span className="text-green-600">✓</span> Same Day Delivery Available
-              </div>
-              <div className="bg-white/80 rounded-lg p-3 border border-purple-100">
-                <span className="text-purple-600">✓</span> Government Approved Translators
-              </div>
-              <div className="bg-white/80 rounded-lg p-3 border border-orange-100">
-                <span className="text-orange-600">✓</span> Affordable Translation Rates
-              </div>
-            </div>
-          </div>
-          
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-12 sm:mb-16 px-4">
+          <div className="mb-12">
             <Button 
               size={isMobile ? "default" : "lg"} 
-              className="w-full sm:w-auto text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
+              className="text-base sm:text-lg px-8 py-4 sm:px-12 sm:py-6 bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-semibold rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105"
               onClick={scrollToQuote}
             >
-              Get Free Translation Quote - 15 Minutes Response
-            </Button>
-            <Button 
-              variant="outline" 
-              size={isMobile ? "default" : "lg"} 
-              className="w-full sm:w-auto text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6 border-2 hover:bg-blue-50 transition-all duration-300 hover:shadow-lg"
-              onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              View Translation Services
+              Get Linguify
             </Button>
           </div>
           
-          {/* Enhanced Stats with SEO Keywords */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 text-center px-2">
-            <div className="bg-white/80 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group">
-              <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-800 mb-2 sm:mb-3 group-hover:scale-110 transition-transform">500+</div>
-              <div className="text-sm sm:text-base text-muted-foreground font-medium">Successful Translation Projects</div>
-              <div className="text-xs sm:text-sm text-muted-foreground mt-1 sm:mt-2">Across legal, medical, technical industries</div>
-            </div>
-            <div className="bg-white/80 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group">
-              <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-green-800 mb-2 sm:mb-3 group-hover:scale-110 transition-transform">30+</div>
-              <div className="text-sm sm:text-base text-muted-foreground font-medium">Languages Supported</div>
-              <div className="text-xs sm:text-sm text-muted-foreground mt-1 sm:mt-2">Native certified translators available</div>
-            </div>
-            <div className="bg-white/80 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group sm:col-span-2 lg:col-span-1">
-              <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-purple-800 mb-2 sm:mb-3 group-hover:scale-110 transition-transform">98%</div>
-              <div className="text-sm sm:text-base text-muted-foreground font-medium">Translation Accuracy Rate</div>
-              <div className="text-xs sm:text-sm text-muted-foreground mt-1 sm:mt-2">ISO certified quality assurance</div>
+          {/* Illustration section */}
+          <div className="relative max-w-3xl mx-auto mb-12">
+            <div className="bg-gradient-to-br from-cyan-400/20 to-blue-400/20 rounded-3xl p-8 backdrop-blur-sm border border-white/10">
+              <div className="flex justify-center items-center space-x-4 mb-6">
+                {/* Laptop/Device representations */}
+                <div className="w-32 h-20 bg-white/90 rounded-lg shadow-lg transform -rotate-6 hover:rotate-0 transition-transform duration-300">
+                  <div className="w-full h-3 bg-gray-200 rounded-t-lg"></div>
+                  <div className="p-2">
+                    <div className="w-full h-2 bg-blue-200 rounded mb-1"></div>
+                    <div className="w-3/4 h-2 bg-gray-200 rounded mb-1"></div>
+                    <div className="w-1/2 h-2 bg-gray-200 rounded"></div>
+                  </div>
+                </div>
+                <div className="w-32 h-20 bg-white/90 rounded-lg shadow-lg transform rotate-6 hover:rotate-0 transition-transform duration-300">
+                  <div className="w-full h-3 bg-gray-200 rounded-t-lg"></div>
+                  <div className="p-2">
+                    <div className="w-full h-2 bg-green-200 rounded mb-1"></div>
+                    <div className="w-2/3 h-2 bg-gray-200 rounded mb-1"></div>
+                    <div className="w-4/5 h-2 bg-gray-200 rounded"></div>
+                  </div>
+                </div>
+              </div>
+              {/* Small character illustrations */}
+              <div className="flex justify-center space-x-8">
+                <div className="w-8 h-12 bg-gradient-to-b from-blue-400 to-blue-600 rounded-full opacity-80"></div>
+                <div className="w-8 h-12 bg-gradient-to-b from-green-400 to-green-600 rounded-full opacity-80"></div>
+                <div className="w-8 h-12 bg-gradient-to-b from-purple-400 to-purple-600 rounded-full opacity-80"></div>
+              </div>
             </div>
           </div>
-
-          {/* Service Keywords for SEO */}
-          <div className="mt-8 sm:mt-12 text-xs sm:text-sm text-muted-foreground max-w-4xl mx-auto">
-            <p className="leading-relaxed">
-              <strong>Professional Services:</strong> Document Translation Services • Legal Translation India • Medical Translation Services • 
-              Technical Translation • Certified Translation Services • Website Localization • Business Translation • Academic Translation • 
-              Immigration Document Translation • Marriage Certificate Translation • Birth Certificate Translation • Passport Translation Services
-            </p>
+          
+          {/* Bottom tagline */}
+          <div className="text-xl sm:text-2xl md:text-3xl font-semibold text-white/90">
+            Multilingual Tool for B2C
           </div>
         </div>
-      </div>
-      
-      <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <ArrowDown className="h-5 w-5 sm:h-6 sm:w-6 text-muted-foreground" />
       </div>
     </section>
   );
