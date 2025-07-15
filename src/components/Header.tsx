@@ -36,8 +36,8 @@ const Header = () => {
   const MobileNavigation = () => (
     <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
       <SheetTrigger asChild>
-        <Button variant="ghost" size="icon" className="md:hidden bg-gradient-to-br from-blue-100 to-purple-100 hover:from-blue-200 hover:to-purple-200 border border-blue-200 shadow-md">
-          <Menu className="h-6 w-6 text-blue-600" />
+        <Button variant="ghost" size="icon" className="md:hidden bg-white/10 hover:bg-white/20 border border-white/20 shadow-md">
+          <Menu className="h-6 w-6 text-white" />
           <span className="sr-only">Toggle menu</span>
         </Button>
       </SheetTrigger>
@@ -80,7 +80,7 @@ const Header = () => {
   );
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-blue-50/95 via-white/95 to-purple-50/95 backdrop-blur-md border-b border-gradient-to-r from-blue-200 to-purple-200 supports-[backdrop-filter]:bg-gradient-to-r supports-[backdrop-filter]:from-blue-50/80 supports-[backdrop-filter]:via-white/80 supports-[backdrop-filter]:to-purple-50/80 shadow-lg">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-blue-900/95 via-purple-900/95 to-indigo-900/95 backdrop-blur-md border-b border-white/10 supports-[backdrop-filter]:bg-gradient-to-r supports-[backdrop-filter]:from-blue-900/80 supports-[backdrop-filter]:via-purple-900/80 supports-[backdrop-filter]:to-indigo-900/80 shadow-lg">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Logo />
@@ -89,20 +89,20 @@ const Header = () => {
           <nav className="hidden md:flex items-center space-x-2 lg:space-x-4">
             {navigationItems.map((item, index) => {
               const colors = [
-                'hover:text-blue-600 hover:bg-blue-50',
-                'hover:text-purple-600 hover:bg-purple-50', 
-                'hover:text-green-600 hover:bg-green-50',
-                'hover:text-orange-600 hover:bg-orange-50',
-                'hover:text-pink-600 hover:bg-pink-50',
-                'hover:text-indigo-600 hover:bg-indigo-50',
-                'hover:text-cyan-600 hover:bg-cyan-50',
-                'hover:text-teal-600 hover:bg-teal-50'
+                'hover:text-blue-300 hover:bg-blue-900/30',
+                'hover:text-purple-300 hover:bg-purple-900/30', 
+                'hover:text-green-300 hover:bg-green-900/30',
+                'hover:text-orange-300 hover:bg-orange-900/30',
+                'hover:text-pink-300 hover:bg-pink-900/30',
+                'hover:text-indigo-300 hover:bg-indigo-900/30',
+                'hover:text-cyan-300 hover:bg-cyan-900/30',
+                'hover:text-teal-300 hover:bg-teal-900/30'
               ];
               return (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`text-sm lg:text-base text-muted-foreground ${colors[index % colors.length]} transition-all duration-300 hover:scale-110 hover:shadow-md px-3 py-2 rounded-full font-medium border border-transparent hover:border-current/20`}
+                  className={`text-sm lg:text-base text-white/80 ${colors[index % colors.length]} transition-all duration-300 hover:scale-110 hover:shadow-md px-3 py-2 rounded-full font-medium border border-transparent hover:border-current/20`}
                 >
                   {item.label}
                 </button>
