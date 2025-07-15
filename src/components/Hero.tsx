@@ -11,11 +11,11 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 to-blue-50 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-900 via-purple-800 to-indigo-900 overflow-hidden">
       {/* Background image */}
-      <div className="absolute inset-0 opacity-20">
+      <div className="absolute inset-0 opacity-30">
         <img 
-          src="/lovable-uploads/30c8b16a-f320-408c-a511-978738cd6002.png" 
+          src="/lovable-uploads/d81c345a-4df1-4694-a1a1-664f801b5b74.png" 
           alt="LinguaSolutions Background" 
           className="w-full h-full object-cover"
         />
@@ -26,23 +26,23 @@ const Hero = () => {
       <div className="absolute bottom-1/3 right-1/3 w-48 h-48 bg-indigo-400/10 rounded-full mix-blend-overlay filter blur-xl animate-pulse"></div>
       
       {/* Language decoration elements */}
-      <div className="absolute top-20 right-10 opacity-20 text-4xl font-bold text-blue-600/30 transform rotate-12">
+      <div className="absolute top-20 right-10 opacity-30 text-4xl font-bold text-white/40 transform rotate-12">
         తెలుగు
       </div>
-      <div className="absolute bottom-40 left-10 opacity-20 text-3xl font-bold text-indigo-600/30 transform -rotate-12">
+      <div className="absolute bottom-40 left-10 opacity-30 text-3xl font-bold text-white/40 transform -rotate-12">
         தமிழ்
       </div>
-      <div className="absolute top-1/3 left-10 opacity-20 text-2xl font-bold text-purple-600/30 transform rotate-45">
+      <div className="absolute top-1/3 left-10 opacity-30 text-2xl font-bold text-white/40 transform rotate-45">
         ગુજરાતી
       </div>
       
       <div className="container mx-auto px-4 text-center relative z-10">
         <div className="max-w-4xl mx-auto animate-fade-in">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-slate-800 mb-6 leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
             Advanced Translation Hub for India
           </h1>
           
-          <p className="text-lg sm:text-xl md:text-2xl text-slate-600 mb-8 max-w-3xl mx-auto font-light leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl text-blue-100 mb-8 max-w-3xl mx-auto font-light leading-relaxed">
             Linga Solutions delivers precision-driven language services across 40+ Indian & international languages. Empowering businesses with seamless communication solutions.
           </p>
           
@@ -88,7 +88,7 @@ const Hero = () => {
           </div>
           
           {/* Bottom tagline */}
-          <div className="text-xl sm:text-2xl md:text-3xl font-semibold text-slate-700">
+          <div className="text-xl sm:text-2xl md:text-3xl font-semibold text-white/90">
             Professional Language Solutions for Growing Businesses
           </div>
         </div>
