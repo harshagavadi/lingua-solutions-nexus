@@ -32,11 +32,11 @@ const Logo = ({ className = '', size = 'md' }: LogoProps) => {
       </div>
       
       <div className="flex flex-col">
-        <span className={`${textSizeClasses[size]} font-bold bg-gradient-to-r from-blue-600 to-indigo-700 bg-clip-text text-transparent`}>
+        <span className={`${textSizeClasses[size]} font-bold text-white`}>
           LinguaSolutions
         </span>
         {size !== 'sm' && (
-          <span className="text-xs text-muted-foreground font-medium tracking-wide">
+          <span className="text-xs text-white/70 font-medium tracking-wide">
             Professional Translation Services
           </span>
         )}
