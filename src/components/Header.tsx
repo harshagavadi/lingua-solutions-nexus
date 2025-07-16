@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 import {
   Sheet,
   SheetContent,
@@ -16,9 +17,15 @@ import Logo from './Logo';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const isMobile = useIsMobile();
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
 
   const scrollToSection = (sectionId: string) => {
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+    if (isHomePage) {
+      document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.location.href = `/#${sectionId}`;
+    }
     setIsMenuOpen(false);
   };
 
@@ -31,6 +38,10 @@ const Header = () => {
     { id: 'career', label: 'Career' },
     { id: 'backlinks', label: 'Resources' },
     { id: 'contact', label: 'Contact' },
+  ];
+
+  const linkItems = [
+    { path: '/articles', label: 'Articles' },
   ];
 
   const MobileNavigation = () => (
@@ -67,6 +78,16 @@ const Header = () => {
               </button>
             );
           })}
+          {linkItems.map((item, index) => (
+            <Link
+              key={item.path}
+              to={item.path}
+              onClick={() => setIsMenuOpen(false)}
+              className="text-left text-lg text-muted-foreground hover:bg-emerald-100 hover:text-emerald-700 hover:border-emerald-300 transition-all duration-300 py-3 px-4 rounded-lg border border-transparent font-medium hover:shadow-md hover:scale-105"
+            >
+              {item.label}
+            </Link>
+          ))}
           <Button 
             onClick={() => scrollToSection('quote')} 
             className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 mt-6 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
@@ -108,6 +129,15 @@ const Header = () => {
                 </button>
               );
             })}
+            {linkItems.map((item) => (
+              <Link
+                key={item.path}
+                to={item.path}
+                className="text-sm lg:text-base text-white/80 hover:text-emerald-300 hover:bg-emerald-900/30 transition-all duration-300 hover:scale-110 hover:shadow-md px-3 py-2 rounded-full font-medium border border-transparent hover:border-current/20"
+              >
+                {item.label}
+              </Link>
+            ))}
             <Button 
               onClick={() => scrollToSection('quote')} 
               className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 text-white transition-all duration-300 hover:shadow-xl hover:scale-105 border-0 font-semibold"
