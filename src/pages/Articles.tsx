@@ -6,7 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { Clock, User, Calendar } from 'lucide-react';
 
 const Articles = () => {
-  const [selectedArticle, setSelectedArticle] = React.useState(null);
+  const [selectedArticle, setSelectedArticle] = React.useState<any>(null);
   const today = new Date();
   const formatDate = (daysAgo: number) => {
     const date = new Date(today);
@@ -509,7 +509,11 @@ const Articles = () => {
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {articles.map((article, index) => (
-                <Card key={article.slug} className="hover:shadow-lg transition-all duration-300 h-full flex flex-col group cursor-pointer">
+                <Card 
+                  key={article.slug} 
+                  className="hover:shadow-lg transition-all duration-300 h-full flex flex-col group cursor-pointer"
+                  onClick={() => setSelectedArticle(article)}
+                >
                   <div className="aspect-video overflow-hidden rounded-t-lg">
                     <img 
                       src={article.image} 
