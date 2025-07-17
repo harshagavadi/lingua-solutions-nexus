@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { Clock, User, Calendar } from 'lucide-react';
 
 const Articles = () => {
+  const [selectedArticle, setSelectedArticle] = React.useState(null);
   const today = new Date();
   const formatDate = (daysAgo: number) => {
     const date = new Date(today);
@@ -579,6 +580,86 @@ const Articles = () => {
             </div>
           </div>
         </section>
+
+        {/* Article Detail Modal */}
+        {selectedArticle && (
+          <div 
+            className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
+            onClick={() => setSelectedArticle(null)}
+          >
+            <div 
+              className="bg-white rounded-lg max-w-4xl max-h-[90vh] overflow-y-auto"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="relative">
+                <img 
+                  src={selectedArticle.image} 
+                  alt={selectedArticle.title}
+                  className="w-full h-64 object-cover"
+                />
+                <button
+                  onClick={() => setSelectedArticle(null)}
+                  className="absolute top-4 right-4 bg-white/80 hover:bg-white rounded-full p-2 transition-colors"
+                >
+                  ✕
+                </button>
+              </div>
+              <div className="p-8">
+                <div className="flex items-center gap-4 mb-4">
+                  <Badge variant="secondary">{selectedArticle.category}</Badge>
+                  <div className="flex items-center text-sm text-muted-foreground">
+                    <Clock className="h-4 w-4 mr-1" />
+                    {selectedArticle.readTime}
+                  </div>
+                  <div className="flex items-center text-sm text-muted-foreground">
+                    <Calendar className="h-4 w-4 mr-1" />
+                    {new Date(selectedArticle.date).toLocaleDateString('en-US', { 
+                      year: 'numeric', 
+                      month: 'long', 
+                      day: 'numeric' 
+                    })}
+                  </div>
+                </div>
+                <h1 className="text-3xl font-bold mb-6">{selectedArticle.title}</h1>
+                <div className="prose max-w-none">
+                  <p className="text-lg text-muted-foreground mb-6">{selectedArticle.excerpt}</p>
+                  <div className="space-y-4">
+                    <p>Professional translation services have become essential for businesses expanding globally. This comprehensive guide explores the key aspects of document translation services and how to choose the right provider for your needs.</p>
+                    
+                    <h2 className="text-2xl font-semibold mt-8 mb-4">Why Professional Translation Matters</h2>
+                    <p>Accurate translation goes beyond converting words from one language to another. It involves understanding cultural nuances, technical terminology, and industry-specific requirements to ensure your message resonates with the target audience.</p>
+                    
+                    <h2 className="text-2xl font-semibold mt-8 mb-4">Key Benefits of Professional Services</h2>
+                    <ul className="list-disc list-inside space-y-2">
+                      <li>Certified accuracy and quality assurance</li>
+                      <li>Cultural adaptation and localization</li>
+                      <li>Industry-specific expertise</li>
+                      <li>Confidentiality and security</li>
+                      <li>Timely delivery and project management</li>
+                    </ul>
+                    
+                    <h2 className="text-2xl font-semibold mt-8 mb-4">Choosing the Right Translation Partner</h2>
+                    <p>When selecting a translation service provider, consider their expertise in your industry, quality assurance processes, technology capabilities, and track record of successful projects.</p>
+                    
+                    <div className="mt-8 p-6 bg-blue-50 rounded-lg">
+                      <h3 className="text-xl font-semibold mb-2">Ready to Get Started?</h3>
+                      <p className="mb-4">Contact our expert team for a personalized consultation and free quote for your translation project.</p>
+                      <button 
+                        onClick={() => {
+                          setSelectedArticle(null);
+                          window.location.href = '/#quote';
+                        }}
+                        className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+                      >
+                        Get Free Quote
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
       <Footer />
     </div>
