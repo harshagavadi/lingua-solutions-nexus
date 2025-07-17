@@ -82,7 +82,10 @@ const Header = () => {
             <Link
               key={item.path}
               to={item.path}
-              onClick={() => setIsMenuOpen(false)}
+              onClick={() => {
+                console.log('Mobile navigating to:', item.path);
+                setIsMenuOpen(false);
+              }}
               className="text-left text-lg text-muted-foreground hover:bg-emerald-100 hover:text-emerald-700 hover:border-emerald-300 transition-all duration-300 py-3 px-4 rounded-lg border border-transparent font-medium hover:shadow-md hover:scale-105"
             >
               {item.label}
@@ -133,6 +136,7 @@ const Header = () => {
               <Link
                 key={item.path}
                 to={item.path}
+                onClick={() => console.log('Navigating to:', item.path)}
                 className="text-sm lg:text-base text-white/80 hover:text-emerald-300 hover:bg-emerald-900/30 transition-all duration-300 hover:scale-110 hover:shadow-md px-3 py-2 rounded-full font-medium border border-transparent hover:border-current/20"
               >
                 {item.label}
