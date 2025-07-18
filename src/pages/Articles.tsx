@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -507,6 +508,15 @@ const Articles = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50">
+      <Helmet>
+        <title>Professional Translation Articles & Insights | LinguaSolutions India</title>
+        <meta name="description" content="Expert translation insights, industry best practices, and comprehensive guides for professional translation services across all industries." />
+        <meta name="keywords" content="translation articles, professional translation guides, translation industry insights, document translation tips" />
+        <link rel="canonical" href="https://www.linguasolutionsindia.com/articles" />
+        <meta property="og:title" content="Professional Translation Articles & Insights | LinguaSolutions India" />
+        <meta property="og:description" content="Expert translation insights, industry best practices, and comprehensive guides for professional translation services." />
+        <meta property="og:url" content="https://www.linguasolutionsindia.com/articles" />
+      </Helmet>
       <Header />
       <div className="pt-16">
         {/* Hero Section */}
