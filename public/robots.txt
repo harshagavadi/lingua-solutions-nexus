@@ -68,6 +68,8 @@ Allow: /*.ico
 
 # Sitemap locations
 Sitemap: https://www.linguasolutionsindia.com/sitemap.xml
+Sitemap: https://www.linguasolutionsindia.com/articles-sitemap.xml
+Sitemap: https://www.linguasolutionsindia.com/main-sitemap.xml
 
 # General crawl delay for better server performance
 Crawl-delay: 1
