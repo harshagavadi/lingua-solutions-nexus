@@ -5,6 +5,16 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Clock, User, Calendar } from 'lucide-react';
 
+// Import category-specific images
+import documentTranslation from '../assets/document-translation.jpg';
+import legalTranslation from '../assets/legal-translation.jpg';
+import medicalTranslation from '../assets/medical-translation.jpg';
+import businessTranslation from '../assets/business-translation.jpg';
+import technicalTranslation from '../assets/technical-translation.jpg';
+import academicTranslation from '../assets/academic-translation.jpg';
+import websiteLocalization from '../assets/website-localization.jpg';
+import certifiedTranslation from '../assets/certified-translation.jpg';
+
 const Articles = () => {
   const [selectedArticle, setSelectedArticle] = React.useState<any>(null);
   const today = new Date();
@@ -49,7 +59,7 @@ const Articles = () => {
       category: "Document Translation",
       readTime: "12 min read",
       date: formatDate(0),
-      image: articleImages[0],
+      image: documentTranslation,
       slug: "professional-document-translation-services-guide-2024"
     },
     {
@@ -58,7 +68,7 @@ const Articles = () => {
       category: "Legal Translation",
       readTime: "15 min read", 
       date: formatDate(1),
-      image: articleImages[1],
+      image: legalTranslation,
       slug: "legal-document-translation-international-law-precision"
     },
     {
@@ -67,7 +77,7 @@ const Articles = () => {
       category: "Medical Translation",
       readTime: "10 min read",
       date: formatDate(2),
-      image: articleImages[2],
+      image: medicalTranslation,
       slug: "medical-translation-services-healthcare-communication"
     },
     {
@@ -76,7 +86,7 @@ const Articles = () => {
       category: "Business Translation",
       readTime: "8 min read",
       date: formatDate(3),
-      image: articleImages[3],
+      image: businessTranslation,
       slug: "business-document-translation-global-markets"
     },
     {
@@ -85,7 +95,7 @@ const Articles = () => {
       category: "Technical Translation",
       readTime: "11 min read",
       date: formatDate(4),
-      image: articleImages[4],
+      image: technicalTranslation,
       slug: "technical-translation-excellence-complex-documentation"
     },
     {
@@ -94,7 +104,7 @@ const Articles = () => {
       category: "Academic Translation",
       readTime: "9 min read",
       date: formatDate(5),
-      image: articleImages[5],
+      image: academicTranslation,
       slug: "academic-document-translation-scholarly-communication"
     },
     {
@@ -103,7 +113,7 @@ const Articles = () => {
       category: "Financial Translation",
       readTime: "13 min read",
       date: formatDate(6),
-      image: articleImages[6],
+      image: businessTranslation,
       slug: "financial-document-translation-global-compliance"
     },
     {
@@ -112,7 +122,7 @@ const Articles = () => {
       category: "Website Localization",
       readTime: "14 min read",
       date: formatDate(7),
-      image: articleImages[7],
+      image: websiteLocalization,
       slug: "website-localization-services-global-digital-success"
     },
     {
@@ -121,7 +131,7 @@ const Articles = () => {
       category: "Immigration Translation",
       readTime: "10 min read",
       date: formatDate(8),
-      image: articleImages[8],
+      image: legalTranslation,
       slug: "immigration-document-translation-legal-accuracy"
     },
     {
@@ -130,7 +140,7 @@ const Articles = () => {
       category: "Certified Translation",
       readTime: "8 min read",
       date: formatDate(9),
-      image: articleImages[9],
+      image: certifiedTranslation,
       slug: "certified-translation-services-official-authentication"
     },
     {
