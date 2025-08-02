@@ -39,9 +39,7 @@ const Header = () => {
     { id: 'contact', label: 'Contact' },
   ];
 
-  const linkItems = [
-    { path: '/articles', label: 'Articles' },
-  ];
+  const linkItems = [];
 
   const MobileNavigation = () => (
     <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
