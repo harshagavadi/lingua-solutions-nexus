@@ -1,13 +1,14 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Clock, User, Calendar } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const Articles = () => {
-  const [selectedArticle, setSelectedArticle] = React.useState<any>(null);
   const today = new Date();
   const formatDate = (daysAgo: number) => {
     const date = new Date(today);
@@ -337,160 +338,130 @@ const Articles = () => {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {articles.map((article, index) => (
-                <Card 
-                  key={article.slug} 
-                  className="hover:shadow-lg transition-all duration-300 h-full flex flex-col group cursor-pointer"
-                  onClick={() => setSelectedArticle(article)}
-                >
-                  <div className="relative overflow-hidden">
-                    <img 
-                      src={article.image}
-                      alt={`${article.category} - ${article.title}`}
-                      className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
-                      loading="lazy"
-                    />
-                  </div>
-                  <CardHeader className="flex-grow">
-                    <div className="flex items-center justify-between mb-2">
-                      <Badge variant="secondary" className="text-xs">
-                        {article.category}
-                      </Badge>
-                      <div className="flex items-center text-xs text-muted-foreground">
-                        <Clock className="h-3 w-3 mr-1" />
-                        {article.readTime}
-                      </div>
+              {articles.slice(0, 3).map((article, index) => {
+                // Map article slugs to actual pages we created
+                const getArticleLink = (slug: string) => {
+                  const articleRoutes: { [key: string]: string } = {
+                    'essential-guide-legal-document-translation': '/articles/essential-guide-legal-document-translation',
+                    'medical-translation-accuracy-healthcare': '/articles/medical-translation-accuracy-healthcare', 
+                    'business-contract-translation-best-practices': '/articles/business-contract-translation-best-practices'
+                  };
+                  return articleRoutes[slug] || '#';
+                };
+
+                const realArticles = [
+                  {
+                    title: "Essential Guide to Legal Document Translation",
+                    excerpt: "Understanding the complexities and requirements for translating legal documents across different jurisdictions.",
+                    category: "Legal Translation",
+                    readTime: "8 min read",
+                    date: "2024-01-15",
+                    image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&h=400&fit=crop",
+                    slug: "essential-guide-legal-document-translation"
+                  },
+                  {
+                    title: "Medical Translation: Accuracy in Healthcare Documentation",
+                    excerpt: "How precise medical translation saves lives and ensures proper healthcare delivery worldwide.",
+                    category: "Medical Translation",
+                    readTime: "6 min read",
+                    date: "2024-01-14",
+                    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600&h=400&fit=crop",
+                    slug: "medical-translation-accuracy-healthcare"
+                  },
+                  {
+                    title: "Business Contract Translation Best Practices",
+                    excerpt: "Key considerations when translating business contracts to avoid legal complications and ensure clarity.",
+                    category: "Business Translation", 
+                    readTime: "7 min read",
+                    date: "2024-01-13",
+                    image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=600&h=400&fit=crop",
+                    slug: "business-contract-translation-best-practices"
+                  }
+                ];
+
+                const currentArticle = realArticles[index];
+                
+                return (
+                  <Card 
+                    key={currentArticle.slug} 
+                    className="hover:shadow-xl transition-all duration-300 h-full flex flex-col group"
+                  >
+                    <div className="relative overflow-hidden">
+                      <img 
+                        src={currentArticle.image}
+                        alt={`${currentArticle.category} - ${currentArticle.title}`}
+                        className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                        loading="lazy"
+                      />
                     </div>
-                    <CardTitle className="text-lg line-clamp-2 mb-2 group-hover:text-primary transition-colors">
-                      {article.title}
-                    </CardTitle>
-                    <CardDescription className="line-clamp-3">
-                      {article.excerpt}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="pt-0">
-                    <div className="flex items-center justify-between text-xs text-muted-foreground">
-                      <div className="flex items-center">
-                        <Calendar className="h-3 w-3 mr-1" />
-                        {new Date(article.date).toLocaleDateString('en-US', { 
-                          year: 'numeric', 
-                          month: 'long', 
-                          day: 'numeric' 
-                        })}
+                    <CardHeader className="flex-grow">
+                      <div className="flex items-center justify-between mb-2">
+                        <Badge variant="secondary" className="text-xs">
+                          {currentArticle.category}
+                        </Badge>
+                        <div className="flex items-center text-xs text-muted-foreground">
+                          <Clock className="h-3 w-3 mr-1" />
+                          {currentArticle.readTime}
+                        </div>
                       </div>
-                      <div className="flex items-center">
-                        <User className="h-3 w-3 mr-1" />
-                        Expert Team
+                      <CardTitle className="text-lg line-clamp-2 mb-2 group-hover:text-primary transition-colors">
+                        {currentArticle.title}
+                      </CardTitle>
+                      <CardDescription className="line-clamp-3">
+                        {currentArticle.excerpt}
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent className="pt-0">
+                      <div className="flex items-center justify-between text-xs text-muted-foreground mb-4">
+                        <div className="flex items-center">
+                          <Calendar className="h-3 w-3 mr-1" />
+                          {new Date(currentArticle.date).toLocaleDateString('en-US', { 
+                            year: 'numeric', 
+                            month: 'long', 
+                            day: 'numeric' 
+                          })}
+                        </div>
+                        <div className="flex items-center">
+                          <User className="h-3 w-3 mr-1" />
+                          Expert Team
+                        </div>
                       </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
+                      <Link to={getArticleLink(currentArticle.slug)}>
+                        <Button 
+                          className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
+                        >
+                          Read Full Article
+                        </Button>
+                      </Link>
+                    </CardContent>
+                  </Card>
+                );
+              })}
             </div>
           </div>
         </section>
 
-        {/* Article Detail Modal */}
-        {selectedArticle && (
-          <div 
-            className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
-            onClick={() => setSelectedArticle(null)}
-          >
-            <div 
-              className="bg-white rounded-lg max-w-4xl max-h-[90vh] overflow-y-auto"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <div className="relative">
-                <img 
-                  src={selectedArticle.image} 
-                  alt={selectedArticle.title}
-                  className="w-full h-64 object-cover"
-                />
-                <button
-                  onClick={() => setSelectedArticle(null)}
-                  className="absolute top-4 right-4 bg-white/80 hover:bg-white rounded-full p-2 transition-colors"
-                >
-                  ✕
-                </button>
-              </div>
-              <div className="p-8">
-                <div className="flex items-center gap-4 mb-4">
-                  <Badge variant="secondary">{selectedArticle.category}</Badge>
-                  <div className="flex items-center text-sm text-muted-foreground">
-                    <Clock className="h-4 w-4 mr-1" />
-                    {selectedArticle.readTime}
-                  </div>
-                  <div className="flex items-center text-sm text-muted-foreground">
-                    <Calendar className="h-4 w-4 mr-1" />
-                    {new Date(selectedArticle.date).toLocaleDateString('en-US', { 
-                      year: 'numeric', 
-                      month: 'long', 
-                      day: 'numeric' 
-                    })}
-                  </div>
-                </div>
-                <h1 className="text-3xl font-bold mb-6">{selectedArticle.title}</h1>
-                <div className="prose max-w-none">
-                  <p className="text-lg text-muted-foreground mb-6">{selectedArticle.excerpt}</p>
-                  <div className="space-y-4">
-                    <p>AI-enhanced translation services are revolutionizing global business communication in 2024. This comprehensive guide explores cutting-edge translation technologies, blockchain documentation requirements, and next-generation localization solutions for modern enterprises.</p>
-                    
-                    <h2 className="text-2xl font-semibold mt-8 mb-4">🚀 Why AI-Enhanced Translation Matters in 2024</h2>
-                    <p>Modern translation combines artificial intelligence with human expertise to deliver unprecedented accuracy and efficiency. It involves neural machine translation, cultural intelligence systems, and specialized domain knowledge to ensure your message resonates across global markets.</p>
-                    
-                    <h2 className="text-2xl font-semibold mt-8 mb-4">🔥 Key Benefits of Next-Generation Translation Services</h2>
-                    <ul className="list-disc list-inside space-y-2">
-                      <li>🤖 AI-powered accuracy with 98% precision rates</li>
-                      <li>🌍 Cultural intelligence and contextual adaptation</li>
-                      <li>⚡ Real-time translation and instant delivery</li>
-                      <li>🔒 Blockchain-secured confidentiality protocols</li>
-                      <li>📊 Advanced analytics and quality metrics</li>
-                      <li>🚀 Specialized expertise in emerging technologies</li>
-                    </ul>
-                    
-                    <h2 className="text-2xl font-semibold mt-8 mb-4">💡 Choosing the Right AI-Enhanced Translation Partner</h2>
-                    <p>When selecting a modern translation service provider, consider their AI technology stack, expertise in emerging industries like blockchain and FinTech, neural machine translation capabilities, and proven track record with cutting-edge technology companies.</p>
-                    
-                    <div className="mt-8 p-6 bg-blue-50 rounded-lg">
-                      <h3 className="text-xl font-semibold mb-2">🚀 Ready to Experience AI-Enhanced Translation?</h3>
-                      <p className="mb-4">Contact our AI translation experts for a personalized consultation and discover how cutting-edge technology can transform your global communication strategy.</p>
-                      <button 
-                        onClick={() => {
-                          setSelectedArticle(null);
-                          window.location.href = '/#quote';
-                        }}
-                        className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
-                      >
-                        🔥 Get AI Translation Quote
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-
         {/* Call to Action */}
         <section className="bg-gradient-to-r from-blue-600 to-purple-600 py-16 text-white">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl font-bold mb-4">🚀 Need AI-Enhanced Translation Services?</h2>
+            <h2 className="text-3xl font-bold mb-4">Need Professional Translation Services?</h2>
             <p className="text-xl mb-8 opacity-90">
-              Get cutting-edge AI translation solutions tailored to your blockchain, FinTech, or emerging technology requirements.
+              Get expert translation solutions for your business documents, legal contracts, and medical records.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button 
-                onClick={() => window.location.href = '/#quote'}
-                className="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
-              >
-                🔥 Get AI Translation Quote
-              </button>
-              <button 
-                onClick={() => window.location.href = '/#contact'}
-                className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary transition-colors"
-              >
-                🤖 Contact AI Expert
-              </button>
+              <Link to="/#quote">
+                <Button className="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                  Get Free Quote
+                </Button>
+              </Link>
+              <Link to="/#contact">
+                <Button 
+                  variant="outline"
+                  className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary transition-colors"
+                >
+                  Contact Us
+                </Button>
+              </Link>
             </div>
           </div>
         </section>
