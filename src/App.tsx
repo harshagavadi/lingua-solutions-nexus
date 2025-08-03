@@ -13,6 +13,7 @@ import CertifiedTranslationProcess from "./pages/articles/CertifiedTranslationPr
 import WebsiteLocalizationGuide from "./pages/articles/WebsiteLocalizationGuide";
 import DocumentTranslationStandards from "./pages/articles/DocumentTranslationStandards";
 import AcademicTranslationBestPractices from "./pages/articles/AcademicTranslationBestPractices";
+import ArticlePage from "./pages/articles/ArticlePage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -34,6 +35,7 @@ const App = () => (
           <Route path="/articles/website-localization-guide" element={<WebsiteLocalizationGuide />} />
           <Route path="/articles/document-translation-standards" element={<DocumentTranslationStandards />} />
           <Route path="/articles/academic-translation-best-practices" element={<AcademicTranslationBestPractices />} />
+          <Route path="/articles/:slug" element={<ArticlePage />} />
           <Route path="/index.html" element={<Navigate to="/" replace />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
