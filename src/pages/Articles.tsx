@@ -1,6 +1,7 @@
 import { articles } from '../data/articles';
 import { Clock, User, Calendar } from 'lucide-react';
 import { Helmet } from 'react-helmet';
+import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Card, { CardHeader, CardTitle, Badge } from '../components/Card';
 
@@ -55,33 +56,34 @@ export default function Articles() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {articles.map((article) => (
-                <Card
-                  key={article.slug}
-                  className="hover:shadow-xl transition-all duration-300 h-full flex flex-col group"
-                >
-                  <div className="relative overflow-hidden">
-                    <img
-                      src={article.image}
-                      alt={`${article.category} - ${article.title}`}
-                      className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
-                      loading="lazy"
-                    />
-                  </div>
-                  <CardHeader className="flex-grow">
-                    <div className="flex items-center justify-between mb-2">
-                      <Badge variant="secondary" className="text-xs">
-                        {article.category}
-                      </Badge>
-                      <div className="flex items-center text-xs text-muted-foreground">
-                        <Clock className="h-3 w-3 mr-1" />
-                        {article.readTime}
-                      </div>
+                <Link key={article.slug} to={`/articles/${article.slug}`} className="block">
+                  <Card
+                    className="hover:shadow-xl transition-all duration-300 h-full flex flex-col group"
+                  >
+                    <div className="relative overflow-hidden">
+                      <img
+                        src={article.image}
+                        alt={`${article.category} - ${article.title}`}
+                        className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                        loading="lazy"
+                      />
                     </div>
-                    <CardTitle className="text-lg line-clamp-2 mb-2 group-hover:text-primary transition-colors">
-                      {article.title}
-                    </CardTitle>
-                  </CardHeader>
-                </Card>
+                    <CardHeader className="flex-grow">
+                      <div className="flex items-center justify-between mb-2">
+                        <Badge variant="secondary" className="text-xs">
+                          {article.category}
+                        </Badge>
+                        <div className="flex items-center text-xs text-muted-foreground">
+                          <Clock className="h-3 w-3 mr-1" />
+                          {article.readTime}
+                        </div>
+                      </div>
+                      <CardTitle className="text-lg line-clamp-2 mb-2 group-hover:text-primary transition-colors">
+                        {article.title}
+                      </CardTitle>
+                    </CardHeader>
+                  </Card>
+                </Link>
               ))}
             </div>
           </div>
