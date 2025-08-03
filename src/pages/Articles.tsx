@@ -1,6 +1,6 @@
 import { articles } from '../data/articles';
 import { Clock, User, Calendar } from 'lucide-react';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Card, { CardHeader, CardTitle, Badge } from '../components/Card';
