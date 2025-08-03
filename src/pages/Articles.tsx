@@ -599,105 +599,61 @@ const Articles = () => {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {articles.slice(0, 3).map((article, index) => {
-                // Map article slugs to actual pages we created
-                const getArticleLink = (slug: string) => {
-                  const articleRoutes: { [key: string]: string } = {
-                    'essential-guide-legal-document-translation': '/articles/essential-guide-legal-document-translation',
-                    'medical-translation-accuracy-healthcare': '/articles/medical-translation-accuracy-healthcare', 
-                    'business-contract-translation-best-practices': '/articles/business-contract-translation-best-practices'
-                  };
-                  return articleRoutes[slug] || '#';
-                };
-
-                const realArticles = [
-                  {
-                    title: "Essential Guide to Legal Document Translation",
-                    excerpt: "Understanding the complexities and requirements for translating legal documents across different jurisdictions.",
-                    category: "Legal Translation",
-                    readTime: "8 min read",
-                    date: "2024-01-15",
-                    image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&h=400&fit=crop",
-                    slug: "essential-guide-legal-document-translation"
-                  },
-                  {
-                    title: "Medical Translation: Accuracy in Healthcare Documentation",
-                    excerpt: "How precise medical translation saves lives and ensures proper healthcare delivery worldwide.",
-                    category: "Medical Translation",
-                    readTime: "6 min read",
-                    date: "2024-01-14",
-                    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600&h=400&fit=crop",
-                    slug: "medical-translation-accuracy-healthcare"
-                  },
-                  {
-                    title: "Business Contract Translation Best Practices",
-                    excerpt: "Key considerations when translating business contracts to avoid legal complications and ensure clarity.",
-                    category: "Business Translation", 
-                    readTime: "7 min read",
-                    date: "2024-01-13",
-                    image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=600&h=400&fit=crop",
-                    slug: "business-contract-translation-best-practices"
-                  }
-                ];
-
-                const currentArticle = realArticles[index];
-                
-                return (
-                  <Card 
-                    key={currentArticle.slug} 
-                    className="hover:shadow-xl transition-all duration-300 h-full flex flex-col group"
-                  >
-                    <div className="relative overflow-hidden">
-                      <img 
-                        src={currentArticle.image}
-                        alt={`${currentArticle.category} - ${currentArticle.title}`}
-                        className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
-                        loading="lazy"
-                      />
+              {articles.map((article) => (
+                <Card
+                  key={article.slug}
+                  className="hover:shadow-xl transition-all duration-300 h-full flex flex-col group"
+                >
+                  <div className="relative overflow-hidden">
+                    <img
+                      src={article.image}
+                      alt={`${article.category} - ${article.title}`}
+                      className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                      loading="lazy"
+                    />
+                  </div>
+                  <CardHeader className="flex-grow">
+                    <div className="flex items-center justify-between mb-2">
+                      <Badge variant="secondary" className="text-xs">
+                        {article.category}
+                      </Badge>
+                      <div className="flex items-center text-xs text-muted-foreground">
+                        <Clock className="h-3 w-3 mr-1" />
+                        {article.readTime}
+                      </div>
                     </div>
-                    <CardHeader className="flex-grow">
-                      <div className="flex items-center justify-between mb-2">
-                        <Badge variant="secondary" className="text-xs">
-                          {currentArticle.category}
-                        </Badge>
-                        <div className="flex items-center text-xs text-muted-foreground">
-                          <Clock className="h-3 w-3 mr-1" />
-                          {currentArticle.readTime}
-                        </div>
+                    <CardTitle className="text-lg line-clamp-2 mb-2 group-hover:text-primary transition-colors">
+                      {article.title}
+                    </CardTitle>
+                    <CardDescription className="line-clamp-3">
+                      {article.excerpt}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="pt-0">
+                    <div className="flex items-center justify-between text-xs text-muted-foreground mb-4">
+                      <div className="flex items-center">
+                        <Calendar className="h-3 w-3 mr-1" />
+                        {new Date(article.date).toLocaleDateString('en-US', {
+                          year: 'numeric',
+                          month: 'long',
+                          day: 'numeric',
+                        })}
                       </div>
-                      <CardTitle className="text-lg line-clamp-2 mb-2 group-hover:text-primary transition-colors">
-                        {currentArticle.title}
-                      </CardTitle>
-                      <CardDescription className="line-clamp-3">
-                        {currentArticle.excerpt}
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent className="pt-0">
-                      <div className="flex items-center justify-between text-xs text-muted-foreground mb-4">
-                        <div className="flex items-center">
-                          <Calendar className="h-3 w-3 mr-1" />
-                          {new Date(currentArticle.date).toLocaleDateString('en-US', { 
-                            year: 'numeric', 
-                            month: 'long', 
-                            day: 'numeric' 
-                          })}
-                        </div>
-                        <div className="flex items-center">
-                          <User className="h-3 w-3 mr-1" />
-                          Expert Team
-                        </div>
+                      <div className="flex items-center">
+                        <User className="h-3 w-3 mr-1" />
+                        Expert Team
                       </div>
-                      <Link to={getArticleLink(currentArticle.slug)}>
-                        <Button 
-                          className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
-                        >
-                          Read Full Article
-                        </Button>
-                      </Link>
-                    </CardContent>
-                  </Card>
-                );
-              })}
+                    </div>
+                    <Link to={`/articles/${article.slug}`}>
+                      <Button
+                        className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
+                      >
+                        Read Full Article
+                      </Button>
+                    </Link>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           </div>
         </section>
