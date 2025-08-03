@@ -27,7 +27,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/articles" element={<Articles />} />
-          <Route path="/articles/essential-guide-legal-document-translation" element={<LegalDocumentTranslation />} />
+          <Route path="/articles/:slug" element={<ArticlePage />} />
           <Route path="/articles/medical-translation-accuracy-healthcare" element={<MedicalTranslationAccuracy />} />
           <Route path="/articles/business-contract-translation-best-practices" element={<BusinessContractTranslation />} />
           <Route path="/articles/technical-translation-challenges" element={<TechnicalTranslationChallenges />} />

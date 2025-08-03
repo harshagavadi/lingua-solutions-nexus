@@ -12,7 +12,9 @@ import { articles } from '../../data/articles';
 
 const ArticlePage = () => {
   const { slug } = useParams();
-  const article = articles.find((a: any) => a.slug === slug);
+  console.log('Current slug:', slug);
+  console.log('Available articles:', articles);
+  const article = articles.find((a) => a.slug === slug);
 
   if (!article) {
     return (
