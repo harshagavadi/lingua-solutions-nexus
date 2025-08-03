@@ -7,14 +7,11 @@ import { Badge } from '@/components/ui/badge';
 import { Clock, User, Calendar } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 // Import the articles array from the main Articles page
-import Articles from '../Articles';
+
+import { articles } from '../../data/articles';
 
 const ArticlePage = () => {
   const { slug } = useParams();
-  // Get articles array from Articles component
-  // (If you move articles to a shared file, import from there instead)
-  // @ts-ignore
-  const articles = Articles()?.props?.articles || [];
   const article = articles.find((a: any) => a.slug === slug);
 
   if (!article) {
