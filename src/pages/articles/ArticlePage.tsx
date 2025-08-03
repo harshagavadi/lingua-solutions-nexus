@@ -17,12 +17,16 @@ const ArticlePage = () => {
   if (!article) {
     return (
       <div className="min-h-screen flex flex-col">
+        <Helmet>
+          <title>404 - Article Not Found | LinguaSolutions India</title>
+          <meta name="description" content="The article you are looking for does not exist. Return to the articles page to explore more content." />
+        </Helmet>
         <Header />
         <div className="flex-grow flex flex-col items-center justify-center text-center py-24">
-          <h1 className="text-4xl font-bold mb-4">404 - Article Not Found</h1>
-          <p className="mb-8">Sorry, the article you are looking for does not exist.</p>
+          <h1 className="text-4xl font-bold mb-4 text-red-600">404 - Article Not Found</h1>
+          <p className="mb-8 text-gray-700">Sorry, the article you are looking for does not exist. It might have been removed or the URL is incorrect.</p>
           <Link to="/articles">
-            <Button>Return to Articles</Button>
+            <Button className="bg-blue-600 hover:bg-blue-700 text-white">Return to Articles</Button>
           </Link>
         </div>
         <Footer />
