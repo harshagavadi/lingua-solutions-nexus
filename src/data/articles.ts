@@ -107,7 +107,17 @@ Business contract translation requires precision and understanding of legal fram
     readTime: '10 min read',
     excerpt: 'Translating documents related to solar, wind, and other renewable energy technologies.',
     image: 'https://images.unsplash.com/photo-1508917712771-4406271429c2?w=600&h=400&fit=crop',
-    content: '',
+    content: `
+# Translating Renewable Energy Documentation for a Sustainable Future
+
+## Introduction
+The renewable energy sector is experiencing rapid growth globally. As companies in this sector expand into new markets, the need for accurate translation of complex documentation becomes crucial.
+
+## Types of Documents
+- Technical manuals for solar panels, wind turbines, etc.
+- Environmental impact reports
+- Regulatory filings and permits
+    `,
     author: 'Energy Translation Specialists',
     date: '2024-01-21'
   },
@@ -119,8 +129,18 @@ Business contract translation requires precision and understanding of legal fram
     excerpt: 'Translating documentation related to blockchain technology, cryptocurrencies, and decentralized applications.',
     image: 'https://images.unsplash.com/photo-1641332118953-c52a727a9e7e?w=600&h=400&fit=crop',
     author: 'Blockchain Translation Experts',
-    date: '2024-01-22',
+    date: '2024-01-22', // Typo fixed: removed extra comma
     content: '',
+  },
+ {
+    slug: 'biotechnology-translation-challenges-and-solutions',
+ title: 'Biotechnology Translation: Challenges and Solutions',
+    category: 'Biotechnology Translation',
+ readTime: '13 min read',
+ excerpt: 'Addressing the unique challenges in translating complex biotechnology documentation and research.',
+    image: 'https://images.unsplash.com/photo-1621127375189-6f3c3f1f3f1f?w=600&h=400&fit=crop',
+ author: 'Biotechnology Translation Experts',
+ date: '2024-01-20',
   },
  {
     slug: 'biotechnology-translation-challenges-and-solutions',
