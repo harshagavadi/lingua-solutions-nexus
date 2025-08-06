@@ -43,7 +43,6 @@ Legal translation encompasses various document types including contracts, court 
     author: 'Legal Translation Team',
     date: '2024-01-15'
  date: '2025-07-15'
-  {
     slug: 'medical-translation-accuracy-healthcare',
     title: 'Medical Translation: Accuracy in Healthcare Documentation',
     category: 'Medical Translation',
