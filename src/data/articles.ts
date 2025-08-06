@@ -18,7 +18,7 @@ export const articles: Article[] = [
     category: 'Legal Translation',
     readTime: '8 min read',
     excerpt: 'Understanding the complexities and requirements for translating legal documents across different jurisdictions.',
-    image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&h=400&fit=crop',
+    image: '/src/assets/legal-translation.jpg',
     content: `
 # Essential Guide to Legal Document Translation
 
@@ -49,7 +49,7 @@ Legal translation encompasses various document types including contracts, court 
     category: 'Medical Translation',
     readTime: '6 min read',
     excerpt: 'How precise medical translation saves lives and ensures proper healthcare delivery worldwide.',
-    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600&h=400&fit=crop',
+    image: '/src/assets/medical-translation.jpg',
     content: `
 # Medical Translation: Accuracy in Healthcare Documentation
 
@@ -77,7 +77,7 @@ Different countries have specific requirements for medical document translation,
     category: 'Business Translation',
     readTime: '7 min read',
     excerpt: 'Key considerations when translating business contracts to avoid legal complications and ensure clarity.',
-    image: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?w=600&h=400&fit=crop',
+    image: '/src/assets/business-translation.jpg',
     content: `
 # Business Contract Translation Best Practices
 
@@ -106,7 +106,7 @@ Business contract translation requires precision and understanding of legal fram
     category: 'Energy Translation',
     readTime: '10 min read',
     excerpt: 'Translating documents related to solar, wind, and other renewable energy technologies.',
-    image: 'https://images.unsplash.com/photo-1508917712771-4406271429c2?w=600&h=400&fit=crop',
+ image: '/src/assets/technical-translation.jpg', // Assuming Energy Translation falls under Technical
     content: `
 # Translating Renewable Energy Documentation for a Sustainable Future
 
@@ -127,7 +127,7 @@ The renewable energy sector is experiencing rapid growth globally. As companies 
     category: 'Technology Translation',
     readTime: '11 min read',
     excerpt: 'Translating documentation related to blockchain technology, cryptocurrencies, and decentralized applications.',
-    image: 'https://images.unsplash.com/photo-1641332118953-c52a727a9e7e?w=600&h=400&fit=crop',
+    image: '/src/assets/technical-translation.jpg', // Assuming Technology Translation falls under Technical
     author: 'Blockchain Translation Experts',
     date: '2024-01-22', // Typo fixed: removed extra comma
     content: '',
@@ -138,7 +138,7 @@ The renewable energy sector is experiencing rapid growth globally. As companies 
     category: 'Biotechnology Translation',
  readTime: '13 min read',
  excerpt: 'Addressing the unique challenges in translating complex biotechnology documentation and research.',
-    image: 'https://images.unsplash.com/photo-1621127375189-6f3c3f1f3f1f?w=600&h=400&fit=crop',
+    image: '/src/assets/medical-translation.jpg', // Assuming Biotechnology Translation falls under Medical
  author: 'Biotechnology Translation Experts',
  date: '2024-01-20',
   },
@@ -148,7 +148,7 @@ The renewable energy sector is experiencing rapid growth globally. As companies 
     category: 'Biotechnology Translation',
  readTime: '13 min read',
  excerpt: 'Addressing the unique challenges in translating complex biotechnology documentation and research.',
-    image: 'https://images.unsplash.com/photo-1621127375189-6f3c3f1f3f1f?w=600&h=400&fit=crop',
+    image: '/src/assets/medical-translation.jpg', // Assuming Biotechnology Translation falls under Medical
  author: 'Biotechnology Translation Experts',
  date: '2024-01-20',
  content: `
@@ -227,7 +227,7 @@ Biotechnology translation is a complex but essential component of global expansi
     category: 'Academic Translation',
  readTime: '11 min read',
     excerpt: 'Translating academic papers, research, and educational materials for international audiences.',
-    image: 'https://images.unsplash.com/photo-1628139013138-e6c35142a827?w=600&h=400&fit=crop',
+    image: '/src/assets/academic-translation.jpg',
     author: 'Academic Translation Specialists',
  date: '2024-01-19',
  content: `
@@ -305,7 +305,7 @@ Academic translation is a specialized and demanding field that is essential for 
     category: 'Technical Translation',
     readTime: '12 min read',
     excerpt: 'Ensuring accuracy and clarity in the translation of technical manuals for global audiences.',
-    image: 'https://images.unsplash.com/photo-1487537446237-cd1450f1cd7b?w=600&h=400&fit=crop',
+    image: '/src/assets/technical-translation.jpg',
     content: `
 # Technical Manual Translation: Best Practices for Accuracy and Clarity
 
@@ -385,7 +385,7 @@ Technical manual translation is a complex process that requires a combination of
  category: 'Website Localization',
  readTime: '10 min read',
  excerpt: 'Strategies for effectively localizing your website to reach a global audience and expand your market.',
-    image: 'https://images.unsplash.com/photo-1496171367476-d66f9f179172?w=600&h=400&fit=crop',
+    image: '/src/assets/website-localization.jpg',
  author: 'Localization Specialists',
  date: '2024-01-17',
  content: `
@@ -459,7 +459,7 @@ Website localization is a strategic imperative for businesses seeking to expand 
     category: 'Certified Translation',
     readTime: '9 min read',
     excerpt: 'Understanding when and why certified translation is required for legal and official documents.',
-    image: 'https://images.unsplash.com/photo-1593700007769-f00f1b9a1a1c?w=600&h=400&fit=crop',
+    image: '/src/assets/certified-translation.jpg',
     content: `
 # The Importance of Certified Translation for Official Documents
 
