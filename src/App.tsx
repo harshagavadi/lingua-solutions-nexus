@@ -13,6 +13,10 @@ import CertifiedTranslationProcess from "./pages/articles/CertifiedTranslationPr
 import WebsiteLocalizationGuide from "./pages/articles/WebsiteLocalizationGuide";
 import DocumentTranslationStandards from "./pages/articles/DocumentTranslationStandards";
 import AcademicTranslationBestPractices from "./pages/articles/AcademicTranslationBestPractices";
+import NeurolinguisticProgramming from "./pages/articles/NeurolinguisticProgramming";
+import QuantumComputingTranslation from "./pages/articles/QuantumComputingTranslation";
+import SustainableEnergyDocumentation from "./pages/articles/SustainableEnergyDocumentation";
+import SpaceTechnologyTranslation from "./pages/articles/SpaceTechnologyTranslation";
 import ArticlePage from "./pages/articles/ArticlePage";
 import NotFound from "./pages/NotFound";
 
@@ -34,6 +38,10 @@ const App = () => (
           <Route path="/articles/website-localization-guide" element={<WebsiteLocalizationGuide />} />
           <Route path="/articles/document-translation-standards" element={<DocumentTranslationStandards />} />
           <Route path="/articles/academic-translation-best-practices" element={<AcademicTranslationBestPractices />} />
+          <Route path="/articles/neurolinguistic-programming" element={<NeurolinguisticProgramming />} />
+          <Route path="/articles/quantum-computing-translation" element={<QuantumComputingTranslation />} />
+          <Route path="/articles/sustainable-energy-documentation" element={<SustainableEnergyDocumentation />} />
+          <Route path="/articles/space-technology-translation" element={<SpaceTechnologyTranslation />} />
           <Route path="/articles/:slug" element={<ArticlePage />} />
           <Route path="/index.html" element={<Navigate to="/" replace />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
