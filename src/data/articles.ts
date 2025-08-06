@@ -41,7 +41,11 @@ Legal translation encompasses various document types including contracts, court 
 - Ensure cultural adaptation while preserving legal meaning
     `,
     author: 'Legal Translation Team',
-    date: '2024-01-15'
+    date: '2024-01-15',
+  },
+  {
+    slug: 'medical-translation-accuracy-in-healthcare-documentation',
+    title: 'Medical Translation: Accuracy in Healthcare Documentation',
     category: 'Medical Translation',
     readTime: '6 min read',
     excerpt: 'How precise medical translation saves lives and ensures proper healthcare delivery worldwide.',
@@ -65,7 +69,7 @@ Medical translation requires specialized translators with medical backgrounds, m
 Different countries have specific requirements for medical document translation, including certification and validation processes.
     `,
     author: 'Medical Translation Team',
-    date: '2024-01-14'
+    date: '2024-01-14',
   },
   {
     slug: 'business-contract-translation-best-practices',
@@ -294,10 +298,7 @@ Technology can be a valuable tool in academic translation, but it should be used
 ## Conclusion
 Academic translation is a specialized and demanding field that is essential for the global dissemination of knowledge and research. It requires skilled translators with subject matter expertise, a deep understanding of academic conventions, and a commitment to accuracy and precision. By following best practices, leveraging appropriate technology, and partnering with qualified academic translation professionals, researchers, institutions, and publishers can effectively share their work with international audiences, fostering collaboration, advancing knowledge, and contributing to the global academic community.
     `,
-  }
-];
-
-  ,
+  },
   {
     slug: 'technical-manual-translation-best-practices',
     title: 'Technical Manual Translation: Best Practices for Accuracy and Clarity',
