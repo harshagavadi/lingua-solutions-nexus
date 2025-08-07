@@ -15,7 +15,8 @@ const WebsiteLocalizationStrategyForGlobalReach = () => {
   if (!article) {
     return null; // Or a fallback UI
   }
-  return <ArticlePage article={article} />;
+  // ArticlePage uses useParams to get the slug, so no props needed
+  return <ArticlePage />;
 };
 
 export default WebsiteLocalizationStrategyForGlobalReach;

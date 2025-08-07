@@ -9,9 +9,8 @@ const AcademicTranslationNavigatingTheWorldOfResearchAndAcademia: React.FC = () 
     return <div>Article not found</div>;
   }
 
-  return (
-    <ArticlePage article={articleData} />
-  );
+  // ArticlePage uses useParams to get the slug, so no props needed
+  return <ArticlePage />;
 };
 
 export default AcademicTranslationNavigatingTheWorldOfResearchAndAcademia;

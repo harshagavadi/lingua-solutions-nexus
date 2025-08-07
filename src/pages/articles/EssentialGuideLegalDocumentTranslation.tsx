@@ -1,6 +1,6 @@
 import React from 'react';
 import ArticlePage from './ArticlePage'; // Assuming ArticlePage is in the same directory
-import articles from '../data/articles'; // Adjust the import path if necessary
+import { articles } from '../../data/articles'; // Adjust the import path if necessary
 
 const articleData = articles.find(article => article.slug === 'essential-guide-legal-document-translation');
 
@@ -15,9 +15,8 @@ const EssentialGuideLegalDocumentTranslation: React.FC = () => {
     return <div>Article not found.</div>; // Example error handling
   }
 
-  return (
-    <ArticlePage article={articleData} />
-  );
+  // ArticlePage uses useParams to get the slug, so no props needed
+  return <ArticlePage />;
 };
 
 export default EssentialGuideLegalDocumentTranslation;

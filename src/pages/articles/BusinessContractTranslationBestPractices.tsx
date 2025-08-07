@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArticlePage } from './ArticlePage';
+import ArticlePage from './ArticlePage';
 import { articles } from '../../data/articles';
 
 const article = articles.find(
@@ -11,7 +11,8 @@ const BusinessContractTranslationBestPractices: React.FC = () => {
     return <div>Article not found</div>;
   }
 
-  return <ArticlePage article={article} />;
+  // ArticlePage uses useParams to get the slug, so no props needed
+  return <ArticlePage />;
 };
 
 export default BusinessContractTranslationBestPractices;

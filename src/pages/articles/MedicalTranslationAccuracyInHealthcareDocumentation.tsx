@@ -9,9 +9,8 @@ const MedicalTranslationAccuracyInHealthcareDocumentation: React.FC = () => {
     return <div>Article not found</div>;
   }
 
-  return (
-    <ArticlePage article={medicalTranslationArticle} />
-  );
+  // ArticlePage uses useParams to get the slug, so no props needed
+  return <ArticlePage />;
 };
 
 export default MedicalTranslationAccuracyInHealthcareDocumentation;

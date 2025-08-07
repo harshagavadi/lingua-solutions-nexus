@@ -10,7 +10,8 @@ const BlockchainAndCryptocurrencyTranslationNavigatingADecentralizedWorld = () =
     return <div>Article not found</div>;
   }
 
-  return <ArticlePage article={article} />;
+  // ArticlePage uses useParams to get the slug, so no props needed
+  return <ArticlePage />;
 };
 
 export default BlockchainAndCryptocurrencyTranslationNavigatingADecentralizedWorld;

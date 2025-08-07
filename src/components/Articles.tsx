@@ -2,7 +2,7 @@ import { Calendar, Clock, ArrowRight } from 'lucide-react';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { articles, Article } from '../../data/articles';
+import { articles, Article } from '../data/articles';
 
 const Articles = () => {
   return (
@@ -20,7 +20,7 @@ const Articles = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {articles.map((article) => (
-            <Card key={article.id} className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-card border-border">
+            <Card key={article.slug} className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-card border-border">
               <div className="relative overflow-hidden rounded-t-lg">
                 <img
                   src={article.image}

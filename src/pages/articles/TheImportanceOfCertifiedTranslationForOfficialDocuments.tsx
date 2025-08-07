@@ -11,7 +11,8 @@ const TheImportanceOfCertifiedTranslationForOfficialDocuments: React.FC = () => 
     return <div>Article not found</div>; // Or handle the not found case appropriately
   }
 
-  return <ArticlePage article={article} />;
+  // ArticlePage uses useParams to get the slug, so no props needed
+  return <ArticlePage />;
 };
 
 export default TheImportanceOfCertifiedTranslationForOfficialDocuments;
