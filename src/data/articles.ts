@@ -1,3 +1,12 @@
+import academicTranslationImg from '../assets/academic-translation.jpg';
+import businessTranslationImg from '../assets/business-translation.jpg';
+import certifiedTranslationImg from '../assets/certified-translation.jpg';
+import documentTranslationImg from '../assets/document-translation.jpg';
+import legalTranslationImg from '../assets/legal-translation.jpg';
+import medicalTranslationImg from '../assets/medical-translation.jpg';
+import technicalTranslationImg from '../assets/technical-translation.jpg';
+import websiteLocalizationImg from '../assets/website-localization.jpg';
+
 // Shared articles array for both Articles.tsx and ArticlePage.tsx
 export interface Article {
   slug: string;
@@ -18,7 +27,7 @@ export const articles: Article[] = [
     category: 'Legal Translation',
     readTime: '8 min read',
     excerpt: 'Understanding the complexities and requirements for translating legal documents across different jurisdictions.',
-    image: '/src/assets/legal-translation.jpg',
+    image: legalTranslationImg,
     content: `
 # Essential Guide to Legal Document Translation
 
@@ -49,7 +58,7 @@ Legal translation encompasses various document types including contracts, court 
     category: 'Medical Translation',
     readTime: '6 min read',
     excerpt: 'How precise medical translation saves lives and ensures proper healthcare delivery worldwide.',
-    image: '/src/assets/medical-translation.jpg',
+    image: medicalTranslationImg,
     content: `
 # Medical Translation: Accuracy in Healthcare Documentation
 
@@ -77,7 +86,7 @@ Different countries have specific requirements for medical document translation,
     category: 'Business Translation',
     readTime: '7 min read',
     excerpt: 'Key considerations when translating business contracts to avoid legal complications and ensure clarity.',
-    image: '/src/assets/business-translation.jpg',
+    image: businessTranslationImg,
     content: `
 # Business Contract Translation Best Practices
 
@@ -106,7 +115,7 @@ Business contract translation requires precision and understanding of legal fram
     category: 'Energy Translation',
     readTime: '10 min read',
     excerpt: 'Translating documents related to solar, wind, and other renewable energy technologies.',
- image: '/src/assets/technical-translation.jpg', // Assuming Energy Translation falls under Technical
+ image: technicalTranslationImg, // Assuming Energy Translation falls under Technical
     content: `
 # Translating Renewable Energy Documentation for a Sustainable Future
 
@@ -127,7 +136,7 @@ The renewable energy sector is experiencing rapid growth globally. As companies 
     category: 'Technology Translation',
     readTime: '11 min read',
     excerpt: 'Translating documentation related to blockchain technology, cryptocurrencies, and decentralized applications.',
-    image: '/src/assets/technical-translation.jpg',
+    image: technicalTranslationImg,
     author: 'Blockchain Translation Experts',
     date: '2024-01-22',
     content: `
@@ -158,7 +167,7 @@ Effective blockchain translation requires specialized knowledge and continuous l
     category: 'Biotechnology Translation',
     readTime: '13 min read',
     excerpt: 'Addressing the unique challenges in translating complex biotechnology documentation and research.',
-    image: '/src/assets/medical-translation.jpg',
+    image: medicalTranslationImg,
     author: 'Biotechnology Translation Experts',
     date: '2024-01-20',
     content: `
@@ -237,7 +246,7 @@ Biotechnology translation is a complex but essential component of global expansi
     category: 'Academic Translation',
  readTime: '11 min read',
     excerpt: 'Translating academic papers, research, and educational materials for international audiences.',
-    image: '/src/assets/academic-translation.jpg',
+    image: academicTranslationImg,
     author: 'Academic Translation Specialists',
  date: '2024-01-19',
  content: `
@@ -315,7 +324,7 @@ Academic translation is a specialized and demanding field that is essential for 
     category: 'Technical Translation',
     readTime: '12 min read',
     excerpt: 'Ensuring accuracy and clarity in the translation of technical manuals for global audiences.',
-    image: '/src/assets/technical-translation.jpg',
+    image: technicalTranslationImg,
     content: `
 # Technical Manual Translation: Best Practices for Accuracy and Clarity
 
@@ -395,7 +404,7 @@ Technical manual translation is a complex process that requires a combination of
  category: 'Website Localization',
  readTime: '10 min read',
  excerpt: 'Strategies for effectively localizing your website to reach a global audience and expand your market.',
-    image: '/src/assets/website-localization.jpg',
+    image: websiteLocalizationImg,
  author: 'Localization Specialists',
  date: '2024-01-17',
  content: `
@@ -469,7 +478,7 @@ Website localization is a strategic imperative for businesses seeking to expand 
     category: 'Certified Translation',
     readTime: '9 min read',
     excerpt: 'Understanding when and why certified translation is required for legal and official documents.',
-    image: '/src/assets/certified-translation.jpg',
+    image: certifiedTranslationImg,
     content: `
 # The Importance of Certified Translation for Official Documents
 
@@ -531,7 +540,7 @@ Certified translation plays a vital role in facilitating international communica
     category: 'Translation Psychology',
     readTime: '12 min read',
     excerpt: 'Exploring how NLP techniques enhance translation quality and translator performance through cognitive and linguistic optimization.',
-    image: '/src/assets/academic-translation.jpg',
+    image: academicTranslationImg,
     author: 'Dr. Sarah Chen',
     date: '2025-07-01',
     content: 'Full content will be loaded from component'
@@ -542,7 +551,7 @@ Certified translation plays a vital role in facilitating international communica
     category: 'Technology Translation',
     readTime: '15 min read',
     excerpt: 'Translating complex quantum computing documentation requires understanding of advanced physics, computer science, and emerging technological paradigms.',
-    image: '/src/assets/technical-translation.jpg',
+    image: technicalTranslationImg,
     author: 'Dr. Michael Rodriguez',
     date: '2025-07-05',
     content: 'Full content will be loaded from component'
@@ -553,7 +562,7 @@ Certified translation plays a vital role in facilitating international communica
     category: 'Environmental Translation',
     readTime: '11 min read',
     excerpt: 'As the world transitions to sustainable energy, accurate translation of technical documentation becomes crucial for global climate initiatives.',
-    image: '/src/assets/technical-translation.jpg',
+    image: technicalTranslationImg,
     author: 'Dr. Elena Kowalski',
     date: '2025-07-10',
     content: 'Full content will be loaded from component'
@@ -564,7 +573,7 @@ Certified translation plays a vital role in facilitating international communica
     category: 'Aerospace Translation',
     readTime: '13 min read',
     excerpt: 'Translating space technology documentation requires precision that matches the exactitude of space missions themselves.',
-    image: '/src/assets/technical-translation.jpg',
+    image: technicalTranslationImg,
     author: 'Commander Lisa Zhang',
     date: '2025-07-15',
     content: 'Full content will be loaded from component'
@@ -575,7 +584,7 @@ Certified translation plays a vital role in facilitating international communica
     category: 'Medical AI Translation',
     readTime: '14 min read',
     excerpt: 'Exploring the critical role of translation in healthcare AI systems, ensuring accurate multilingual medical diagnostics worldwide.',
-    image: '/src/assets/medical-translation.jpg',
+    image: medicalTranslationImg,
     author: 'Dr. James Park',
     date: '2025-07-20',
     content: 'Full content will be loaded from component'
@@ -586,7 +595,7 @@ Certified translation plays a vital role in facilitating international communica
     category: 'Cybersecurity Translation',
     readTime: '12 min read',
     excerpt: 'Translating cybersecurity protocols requires deep understanding of threat landscapes, security frameworks, and international compliance standards.',
-    image: '/src/assets/technical-translation.jpg',
+    image: technicalTranslationImg,
     author: 'Alex Thompson',
     date: '2025-07-22',
     content: 'Full content will be loaded from component'
@@ -597,7 +606,7 @@ Certified translation plays a vital role in facilitating international communica
     category: 'Digital Technology',
     readTime: '13 min read',
     excerpt: 'Translating digital twin documentation requires understanding of IoT, simulation, and real-time data processing across industries.',
-    image: '/src/assets/technical-translation.jpg',
+    image: technicalTranslationImg,
     author: 'Dr. Maria Santos',
     date: '2025-07-25',
     content: 'Full content will be loaded from component'
@@ -608,7 +617,7 @@ Certified translation plays a vital role in facilitating international communica
     category: 'Biotechnology Translation',
     readTime: '16 min read',
     excerpt: 'Translating cutting-edge biotechnology research requires expertise in molecular biology, genetic engineering, and regulatory compliance.',
-    image: '/src/assets/medical-translation.jpg',
+    image: medicalTranslationImg,
     author: 'Dr. Robert Kim',
     date: '2025-07-28',
     content: 'Full content will be loaded from component'
