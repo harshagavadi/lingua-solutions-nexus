@@ -46,10 +46,15 @@ const ArticlePage = () => {
   // Enhanced content rendering function
   const renderContent = (content: string) => {
     // Split content into paragraphs and process each line
-    const lines = content.split('\n').filter(line => line.trim() !== '');
+    const lines = content.split('\n');
     
     return lines.map((line, index) => {
       const trimmedLine = line.trim();
+      
+      // Skip empty lines
+      if (trimmedLine === '') {
+        return <div key={index} className="h-4" />;
+      }
       
       // Handle headings
       if (trimmedLine.startsWith('## ')) {
@@ -79,7 +84,28 @@ const ArticlePage = () => {
         );
       }
       
-      // Handle list items
+      // Handle checkbox lists
+      if (trimmedLine.startsWith('☐ ')) {
+        const listText = trimmedLine.replace('☐ ', '');
+        return (
+          <li key={index} className="ml-6 mb-2 flex items-center text-muted-foreground">
+            <span className="mr-2">☐</span>
+            {listText}
+          </li>
+        );
+      }
+      
+      // Handle bullet points with •
+      if (trimmedLine.startsWith('• ')) {
+        const listText = trimmedLine.replace('• ', '');
+        return (
+          <li key={index} className="ml-6 mb-2 list-disc text-muted-foreground">
+            {listText}
+          </li>
+        );
+      }
+      
+      // Handle list items with -
       if (trimmedLine.startsWith('- ')) {
         const listText = trimmedLine.replace('- ', '');
         return (
@@ -99,19 +125,17 @@ const ArticlePage = () => {
         );
       }
       
-      // Handle bold text
-      const processedLine = trimmedLine.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+      // Handle bold text and other formatting
+      let processedLine = trimmedLine
+        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+        .replace(/\*(.*?)\*/g, '<em>$1</em>');
       
       // Regular paragraphs
-      if (trimmedLine.length > 0) {
-        return (
-          <p key={index} className="mb-4 text-muted-foreground leading-relaxed" 
-             dangerouslySetInnerHTML={{ __html: processedLine }} />
-        );
-      }
-      
-      return null;
-    }).filter(Boolean);
+      return (
+        <p key={index} className="mb-4 text-muted-foreground leading-relaxed" 
+           dangerouslySetInnerHTML={{ __html: processedLine }} />
+      );
+    });
   };
 
   return (
