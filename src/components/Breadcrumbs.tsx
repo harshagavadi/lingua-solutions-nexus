@@ -36,13 +36,19 @@ const Breadcrumbs = ({ items }: BreadcrumbsProps) => {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Home",
-                "item": "https://www.linguasolutionsindia.com/"
+                "item": {
+                  "@type": "WebPage",
+                  "@id": "https://www.linguasolutionsindia.com/"
+                }
               },
               ...items.map((item, index) => ({
                 "@type": "ListItem",
                 "position": index + 2,
                 "name": item.label,
-                "item": item.href && !item.isActive ? `https://www.linguasolutionsindia.com${item.href}` : `https://www.linguasolutionsindia.com${item.href || ''}`
+                "item": {
+                  "@type": "WebPage",
+                  "@id": item.href ? `https://www.linguasolutionsindia.com${item.href}` : `https://www.linguasolutionsindia.com${item.href || ''}`
+                }
               }))
             ]
           })
