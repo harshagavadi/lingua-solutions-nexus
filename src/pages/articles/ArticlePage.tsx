@@ -169,10 +169,6 @@ const ArticlePage = () => {
                 {article.readTime}
               </span>
               <span className="flex items-center text-sm text-muted-foreground">
-                <Calendar className="h-4 w-4 mr-1" />
-                {new Date(article.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
-              </span>
-              <span className="flex items-center text-sm text-muted-foreground">
                 <User className="h-4 w-4 mr-1" />
                 {article.author}
               </span>

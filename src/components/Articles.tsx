@@ -47,12 +47,8 @@ const Articles = () => {
                     {article.excerpt}
                   </p>
                   
-                  <div className="flex items-center justify-between text-sm text-muted-foreground mb-4">
-                    <div className="flex items-center gap-2">
-                      <Calendar className="w-4 h-4" />
-                      <span>{new Date(article.date).toLocaleDateString()}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
+                  <div className="flex items-center justify-end text-sm text-muted-foreground mb-4">
+                   <div className="flex items-center gap-2">
                       <Clock className="w-4 h-4" />
                       <span>{article.readTime}</span>
                     </div>
