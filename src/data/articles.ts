@@ -2794,5 +2794,4 @@ Robotic Process Automation translation plays a crucial role in global automation
 
 As RPA technology continues to evolve and expand globally, the importance of accurate technical translation will only increase. Success in this field requires not only exceptional translation capabilities but also understanding of business process optimization, organizational change management, and technology adoption principles that enable successful automation transformation across different global markets and cultural contexts.`
   }
-  }
 ];
