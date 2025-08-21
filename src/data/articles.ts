@@ -19,6 +19,14 @@ import brainComputerImg from '../assets/brain-computer-translation.jpg';
 import smartCityImg from '../assets/smart-city-translation.jpg';
 import quantumCryptographyImg from '../assets/quantum-cryptography-translation.jpg';
 import roboticAutomationImg from '../assets/robotic-automation-translation.jpg';
+import quantumComputingImg from '../assets/quantum-computing-translation.jpg';
+import healthcareAiImg from '../assets/healthcare-ai-translation.jpg';
+import digitalTwinImg from '../assets/digital-twin-translation.jpg';
+import spaceTechnologyImg from '../assets/space-technology-translation.jpg';
+import edgeComputingImg from '../assets/edge-computing-translation.jpg';
+import cybersecurityImg from '../assets/cybersecurity-translation.jpg';
+import geneEditingImg from '../assets/gene-editing-translation.jpg';
+import advancedBiotechnologyImg from '../assets/advanced-biotechnology-translation.jpg';
 
 // Shared articles array for both Articles.tsx and ArticlePage.tsx
 export interface Article {
@@ -1069,7 +1077,7 @@ Certified translation plays a vital role in facilitating international communica
     category: 'Translation Psychology',
     readTime: '12 min read',
     excerpt: 'Exploring how NLP techniques enhance translation quality and translator performance through cognitive and linguistic optimization.',
-    image: academicTranslationImg,
+    image: academicResearchImg,
     author: 'Dr. Sarah Chen',
     date: '2025-07-01',
     content: `# The Role of Neurolinguistic Programming in Translation Excellence
@@ -1214,7 +1222,7 @@ Success in modern translation requires not just linguistic knowledge but also ps
     category: 'Technology Translation',
     readTime: '15 min read',
     excerpt: 'Translating complex quantum computing documentation requires understanding of advanced physics, computer science, and emerging technological paradigms.',
-    image: technicalTranslationImg,
+    image: quantumComputingImg,
     author: 'Dr. Michael Rodriguez',
     date: '2025-07-05',
     content: `# Quantum Computing Documentation Translation: Navigating Tomorrow's Technology
@@ -1363,7 +1371,7 @@ The quantum computing revolution will be truly global, but its success depends o
     category: 'Environmental Translation',
     readTime: '11 min read',
     excerpt: 'As the world transitions to sustainable energy, accurate translation of technical documentation becomes crucial for global climate initiatives.',
-    image: technicalTranslationImg,
+    image: healthcareAiImg,
     author: 'Dr. Elena Kowalski',
     date: '2025-07-10',
     content: `# Metaverse Localization: Translating Virtual World Content
@@ -1506,7 +1514,7 @@ The future of metaverse adoption depends significantly on successful localizatio
     category: 'Aerospace Translation',
     readTime: '13 min read',
     excerpt: 'Translating space technology documentation requires precision that matches the exactitude of space missions themselves.',
-    image: technicalTranslationImg,
+    image: cybersecurityImg,
     author: 'Commander Lisa Zhang',
     date: '2025-07-15',
     content: `# Space Technology Translation: Communicating Beyond Earth's Boundaries
@@ -1641,7 +1649,7 @@ The future of space exploration depends significantly on effective international
     category: 'Medical AI Translation',
     readTime: '14 min read',
     excerpt: 'Exploring the critical role of translation in healthcare AI systems, ensuring accurate multilingual medical diagnostics worldwide.',
-    image: medicalTranslationImg,
+    image: geneEditingImg,
     author: 'Dr. James Park',
     date: '2025-07-20',
     content: `# Advanced Biotechnology Translation: Gene Editing and Synthetic Biology
@@ -1812,7 +1820,7 @@ The future of biotechnology depends significantly on effective international col
     category: 'Cybersecurity Translation',
     readTime: '12 min read',
     excerpt: 'Translating cybersecurity protocols requires deep understanding of threat landscapes, security frameworks, and international compliance standards.',
-    image: technicalTranslationImg,
+    image: spaceTechnologyImg,
     author: 'Alex Thompson',
     date: '2025-07-22',
     content: `# Healthcare AI Translation: Bridging Language Barriers in Medical Diagnostics
@@ -1985,7 +1993,7 @@ The future of equitable healthcare depends significantly on effective internatio
     category: 'Digital Technology',
     readTime: '13 min read',
     excerpt: 'Translating digital twin documentation requires understanding of IoT, simulation, and real-time data processing across industries.',
-    image: technicalTranslationImg,
+    image: advancedBiotechnologyImg,
     author: 'Dr. Maria Santos',
     date: '2025-07-25',
     content: `# Digital Twin Technology Translation: Mirroring Reality Across Languages
@@ -2064,7 +2072,7 @@ The future of digital twin technology depends on effective communication across 
     category: 'Biotechnology Translation',
     readTime: '16 min read',
     excerpt: 'Translating cutting-edge biotechnology research requires expertise in molecular biology, genetic engineering, and regulatory compliance.',
-    image: medicalTranslationImg,
+    image: digitalTwinImg,
     author: 'Dr. Robert Kim',
     date: '2025-07-28',
     content: `# Advanced Biotechnology Translation: Gene Editing and Synthetic Biology
