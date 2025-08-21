@@ -712,5 +712,82 @@ Certified translation plays a vital role in facilitating international communica
     author: 'Dr. Robert Kim',
     date: '2025-07-28',
     content: 'Full content will be loaded from component'
+  },
+  {
+    slug: 'metaverse-localization-virtual-worlds',
+    title: 'Metaverse Localization: Translating Virtual World Content',
+    category: 'Gaming Translation',
+    readTime: '7 min read',
+    excerpt: 'Exploring the unique challenges of localizing virtual reality environments, avatar systems, and immersive digital experiences.',
+    image: technicalTranslationImg,
+    author: 'Maya Patel',
+    date: '2025-07-29',
+    content: 'Full content will be loaded from component'
+  },
+  {
+    slug: 'autonomous-vehicle-documentation-translation',
+    title: 'Autonomous Vehicle Documentation Translation: Self-Driving Future',
+    category: 'Automotive Translation',
+    readTime: '8 min read',
+    excerpt: 'Comprehensive guide to translating documentation for self-driving cars, safety protocols, and regulatory compliance.',
+    image: technicalTranslationImg,
+    author: 'David Chen',
+    date: '2025-07-30',
+    content: 'Full content will be loaded from component'
+  },
+  {
+    slug: 'carbon-capture-technology-translation',
+    title: 'Carbon Capture Technology Translation: Climate Solution Documentation',
+    category: 'Environmental Translation',
+    readTime: '6 min read',
+    excerpt: 'Translating documentation for carbon capture and storage technologies to support global climate action initiatives.',
+    image: documentTranslationImg,
+    author: 'Elena Rodriguez',
+    date: '2025-07-31',
+    content: 'Full content will be loaded from component'
+  },
+  {
+    slug: 'brain-computer-interface-translation',
+    title: 'Brain-Computer Interface Translation: Neural Technology Documentation',
+    category: 'Neurotechnology Translation',
+    readTime: '9 min read',
+    excerpt: 'Specialized translation approaches for brain-computer interface documentation, neural implants, and cognitive enhancement technologies.',
+    image: medicalTranslationImg,
+    author: 'Dr. Sarah Kim',
+    date: '2025-08-01',
+    content: 'Full content will be loaded from component'
+  },
+  {
+    slug: 'smart-city-infrastructure-translation',
+    title: 'Smart City Infrastructure Translation: Urban Technology Documentation',
+    category: 'Urban Technology',
+    readTime: '7 min read',
+    excerpt: 'Comprehensive guide to translating smart city documentation, IoT systems, and urban infrastructure technologies.',
+    image: technicalTranslationImg,
+    author: 'Michael Zhang',
+    date: '2025-08-02',
+    content: 'Full content will be loaded from component'
+  },
+  {
+    slug: 'quantum-cryptography-security-translation',
+    title: 'Quantum Cryptography Security Translation: Future-Proof Encryption',
+    category: 'Security Translation',
+    readTime: '8 min read',
+    excerpt: 'Translating quantum cryptography protocols and security documentation for next-generation encryption systems.',
+    image: technicalTranslationImg,
+    author: 'Dr. Lisa Wang',
+    date: '2025-08-03',
+    content: 'Full content will be loaded from component'
+  },
+  {
+    slug: 'robotic-process-automation-translation',
+    title: 'Robotic Process Automation Translation: Automated Workflow Documentation',
+    category: 'Automation Translation',
+    readTime: '6 min read',
+    excerpt: 'Translating RPA documentation, workflow automation guides, and process optimization materials for global implementation.',
+    image: technicalTranslationImg,
+    author: 'James Thompson',
+    date: '2025-08-04',
+    content: 'Full content will be loaded from component'
   }
 ];
