@@ -42,7 +42,7 @@ const Breadcrumbs = ({ items }: BreadcrumbsProps) => {
                 "@type": "ListItem",
                 "position": index + 2,
                 "name": item.label,
-                ...(item.href && !item.isActive ? { "item": `https://www.linguasolutionsindia.com${item.href}` } : {})
+                "item": item.href && !item.isActive ? `https://www.linguasolutionsindia.com${item.href}` : `https://www.linguasolutionsindia.com${item.href || ''}`
               }))
             ]
           })
