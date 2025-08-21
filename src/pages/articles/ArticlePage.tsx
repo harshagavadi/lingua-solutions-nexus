@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
@@ -42,6 +43,77 @@ const ArticlePage = () => {
     );
   }
 
+  // Enhanced content rendering function
+  const renderContent = (content: string) => {
+    // Split content into paragraphs and process each line
+    const lines = content.split('\n').filter(line => line.trim() !== '');
+    
+    return lines.map((line, index) => {
+      const trimmedLine = line.trim();
+      
+      // Handle headings
+      if (trimmedLine.startsWith('## ')) {
+        const headingText = trimmedLine.replace('## ', '');
+        return (
+          <h2 key={index} className="text-2xl font-bold mt-8 mb-4 text-foreground">
+            {headingText}
+          </h2>
+        );
+      }
+      
+      if (trimmedLine.startsWith('### ')) {
+        const headingText = trimmedLine.replace('### ', '');
+        return (
+          <h3 key={index} className="text-xl font-semibold mt-6 mb-3 text-foreground">
+            {headingText}
+          </h3>
+        );
+      }
+      
+      if (trimmedLine.startsWith('# ')) {
+        const headingText = trimmedLine.replace('# ', '');
+        return (
+          <h1 key={index} className="text-3xl font-bold mt-8 mb-6 text-foreground">
+            {headingText}
+          </h1>
+        );
+      }
+      
+      // Handle list items
+      if (trimmedLine.startsWith('- ')) {
+        const listText = trimmedLine.replace('- ', '');
+        return (
+          <li key={index} className="ml-6 mb-2 list-disc text-muted-foreground">
+            {listText}
+          </li>
+        );
+      }
+      
+      // Handle numbered lists
+      if (/^\d+\.\s/.test(trimmedLine)) {
+        const listText = trimmedLine.replace(/^\d+\.\s/, '');
+        return (
+          <li key={index} className="ml-6 mb-2 list-decimal text-muted-foreground">
+            {listText}
+          </li>
+        );
+      }
+      
+      // Handle bold text
+      const processedLine = trimmedLine.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+      
+      // Regular paragraphs
+      if (trimmedLine.length > 0) {
+        return (
+          <p key={index} className="mb-4 text-muted-foreground leading-relaxed" 
+             dangerouslySetInnerHTML={{ __html: processedLine }} />
+        );
+      }
+      
+      return null;
+    }).filter(Boolean);
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
@@ -85,7 +157,7 @@ const ArticlePage = () => {
             <p className="text-xl text-muted-foreground mb-8">{article.excerpt}</p>
             
             <div className="prose prose-lg max-w-none">
-              <div dangerouslySetInnerHTML={{ __html: article.content.replace(/\n/g, '<br>').replace(/## /g, '<h2>').replace(/# /g, '<h1>').replace(/- /g, '<li>') }} />
+              {renderContent(article.content)}
             </div>
           </div>
         </div>
