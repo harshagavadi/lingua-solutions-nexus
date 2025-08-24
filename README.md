@@ -71,3 +71,31 @@ Yes, you can!
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+
+## Generating 25 Markdown Articles with Python
+
+This project now includes a Python helper script (`generate_articles.py`) that will automatically create **25** Markdown articles (each over 1,000 words) complete with a unique Unsplash image.
+
+### 1. Install Python dependencies
+
+```bash
+# from project root
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+### 2. Export the required API keys
+
+```bash
+export OPENAI_API_KEY="<your-openai-key>"
+export UNSPLASH_ACCESS_KEY="<your-unsplash-access-key>"
+```
+
+### 3. Run the generator
+
+```bash
+python generate_articles.py
+```
+
+The script will output Markdown files to `generated_articles/` and embed Unsplash image URLs. Feel free to modify the `ARTICLE_TITLES` list inside the script to customize topics or change the number of articles.
