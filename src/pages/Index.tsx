@@ -14,6 +14,9 @@ import Backlinks from '../components/Backlinks';
 import SEOContent from '../components/SEOContent';
 import Footer from '../components/Footer';
 import Breadcrumbs from '../components/Breadcrumbs';
+import FAQ from '../components/FAQ';
+import Resources from '../components/Resources';
+import CaseStudies from '../components/CaseStudies';
 
 const Index = () => {
   const [currentSection, setCurrentSection] = useState('home');
@@ -91,11 +94,20 @@ const Index = () => {
         <div id="about" className="scroll-mt-20">
           <About />
         </div>
+        <div className="scroll-mt-20">
+          <CaseStudies />
+        </div>
         <div id="testimonials" className="scroll-mt-20">
           <Testimonials />
         </div>
         <div className="scroll-mt-20">
           <PricingCalculator />
+        </div>
+        <div className="scroll-mt-20">
+          <FAQ />
+        </div>
+        <div className="scroll-mt-20">
+          <Resources />
         </div>
         <div id="quote" className="scroll-mt-20">
           <QuoteForm />
